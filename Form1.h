@@ -558,13 +558,23 @@ namespace ProjetoCLR {
 		{
 			if (txtFreguesia->Text == Convert::ToString(dgvPauta->Rows[i]->Cells[1]->Value))
 			{
-				total = total + 1;
+				total++;
 			}
 
 		}
 
 		//Depois de terminado o Ciclo, o valor da variável "total" passa para a textBox "txtTotalFregueses"
-		txtTotalFregueses->Text = Convert::ToString(total);
+		//Neste caso o IF só verifica se a palavra Aluno será Singular ou Plural
+		if (total == 1)
+		{
+			txtTotalFregueses->Text = Convert::ToString(total) + " Aluno";
+		}
+		else
+		{
+			txtTotalFregueses->Text = Convert::ToString(total) + " Alunos";
+		}
+		
+		
 	}
 private: System::Void btnHomens_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
@@ -580,7 +590,7 @@ private: System::Void btnHomens_Click(System::Object^ sender, System::EventArgs^
 		//Se encontrar a letra M
 		if ("M" == dgvPauta->Rows[i]->Cells[3]->Value)
 		{
-			//Adiciona o que está na coluna zero, neste caso o nome do aluno
+			//Adiciona os dados que estão na coluna zero, neste caso o nome do aluno
 			lstAuxiliar->Items->Add(dgvPauta->Rows[i]->Cells[0]->Value);
 		}
 
