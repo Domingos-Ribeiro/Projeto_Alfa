@@ -162,7 +162,7 @@ namespace ProjetoCLR {
 			this->dgvPauta->DefaultCellStyle = dataGridViewCellStyle2;
 			this->dgvPauta->EnableHeadersVisualStyles = false;
 			this->dgvPauta->GridColor = System::Drawing::Color::White;
-			this->dgvPauta->Location = System::Drawing::Point(15, 63);
+			this->dgvPauta->Location = System::Drawing::Point(15, 65);
 			this->dgvPauta->Name = L"dgvPauta";
 			this->dgvPauta->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Single;
 			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
@@ -196,30 +196,32 @@ namespace ProjetoCLR {
 			this->lstAuxiliar->BackColor = System::Drawing::Color::LightBlue;
 			this->lstAuxiliar->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->lstAuxiliar->FormattingEnabled = true;
-			this->lstAuxiliar->Location = System::Drawing::Point(726, 63);
+			this->lstAuxiliar->Location = System::Drawing::Point(726, 65);
 			this->lstAuxiliar->Name = L"lstAuxiliar";
 			this->lstAuxiliar->Size = System::Drawing::Size(203, 507);
 			this->lstAuxiliar->TabIndex = 2;
 			// 
 			// txtFreguesia
 			// 
-			this->txtFreguesia->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->txtFreguesia->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtFreguesia->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->txtFreguesia->Location = System::Drawing::Point(8, 76);
 			this->txtFreguesia->Multiline = true;
 			this->txtFreguesia->Name = L"txtFreguesia";
-			this->txtFreguesia->Size = System::Drawing::Size(128, 20);
+			this->txtFreguesia->Size = System::Drawing::Size(128, 16);
 			this->txtFreguesia->TabIndex = 3;
 			this->txtFreguesia->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// txtTotalFregueses
 			// 
-			this->txtTotalFregueses->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->txtTotalFregueses->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtTotalFregueses->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->txtTotalFregueses->Location = System::Drawing::Point(178, 76);
 			this->txtTotalFregueses->Multiline = true;
 			this->txtTotalFregueses->Name = L"txtTotalFregueses";
-			this->txtTotalFregueses->Size = System::Drawing::Size(80, 20);
+			this->txtTotalFregueses->Size = System::Drawing::Size(80, 16);
 			this->txtTotalFregueses->TabIndex = 4;
 			this->txtTotalFregueses->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
@@ -281,23 +283,25 @@ namespace ProjetoCLR {
 			// 
 			// txtIdadeAluno
 			// 
-			this->txtIdadeAluno->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->txtIdadeAluno->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtIdadeAluno->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtIdadeAluno->Location = System::Drawing::Point(202, 84);
+			this->txtIdadeAluno->Location = System::Drawing::Point(201, 84);
 			this->txtIdadeAluno->Multiline = true;
 			this->txtIdadeAluno->Name = L"txtIdadeAluno";
-			this->txtIdadeAluno->Size = System::Drawing::Size(56, 20);
+			this->txtIdadeAluno->Size = System::Drawing::Size(56, 16);
 			this->txtIdadeAluno->TabIndex = 8;
 			this->txtIdadeAluno->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// txtNomeAluno
 			// 
-			this->txtNomeAluno->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->txtNomeAluno->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->txtNomeAluno->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->txtNomeAluno->Location = System::Drawing::Point(8, 84);
 			this->txtNomeAluno->Multiline = true;
 			this->txtNomeAluno->Name = L"txtNomeAluno";
-			this->txtNomeAluno->Size = System::Drawing::Size(178, 20);
+			this->txtNomeAluno->Size = System::Drawing::Size(178, 16);
 			this->txtNomeAluno->TabIndex = 7;
 			this->txtNomeAluno->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
@@ -363,7 +367,7 @@ namespace ProjetoCLR {
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::DarkSlateGray;
-			this->label7->Location = System::Drawing::Point(7, 4);
+			this->label7->Location = System::Drawing::Point(3, 4);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(252, 17);
 			this->label7->TabIndex = 5;
@@ -425,7 +429,7 @@ namespace ProjetoCLR {
 			this->panel1->Controls->Add(this->btnMeninas);
 			this->panel1->Controls->Add(this->btnMeninos);
 			this->panel1->Controls->Add(this->label7);
-			this->panel1->Location = System::Drawing::Point(454, 324);
+			this->panel1->Location = System::Drawing::Point(449, 316);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(266, 72);
 			this->panel1->TabIndex = 10;
@@ -440,7 +444,7 @@ namespace ProjetoCLR {
 			this->panel2->Controls->Add(this->txtNomeAluno);
 			this->panel2->Controls->Add(this->label6);
 			this->panel2->Controls->Add(this->btnMaisVelho);
-			this->panel2->Location = System::Drawing::Point(454, 191);
+			this->panel2->Location = System::Drawing::Point(449, 188);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(266, 117);
 			this->panel2->TabIndex = 11;
@@ -454,7 +458,7 @@ namespace ProjetoCLR {
 			this->panel3->Controls->Add(this->label1);
 			this->panel3->Controls->Add(this->label2);
 			this->panel3->Controls->Add(this->label3);
-			this->panel3->Location = System::Drawing::Point(454, 63);
+			this->panel3->Location = System::Drawing::Point(449, 65);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(266, 112);
 			this->panel3->TabIndex = 12;
@@ -474,6 +478,7 @@ namespace ProjetoCLR {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(972, 628);
 			this->Controls->Add(this->groupBox4);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"Form1";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Projeto Alfa";
