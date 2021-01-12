@@ -63,9 +63,11 @@ namespace ProjetoCLR {
 	private: System::Windows::Forms::Button^ btnMaisNovo;
 
 	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Button^ btnMulheres;
 
-	private: System::Windows::Forms::Button^ btnMeninas;
-	private: System::Windows::Forms::Button^ btnMeninos;
+
+	private: System::Windows::Forms::Button^ btnHomens;
+
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
@@ -77,6 +79,7 @@ namespace ProjetoCLR {
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Panel^ panel4;
+	private: System::Windows::Forms::Button^ btnLimparLista;
 	protected:
 
 	private:
@@ -96,6 +99,10 @@ namespace ProjetoCLR {
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->dgvPauta = (gcnew System::Windows::Forms::DataGridView());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->btnContarPorFreguesia = (gcnew System::Windows::Forms::Button());
 			this->lstAuxiliar = (gcnew System::Windows::Forms::ListBox());
 			this->txtFreguesia = (gcnew System::Windows::Forms::TextBox());
@@ -110,25 +117,22 @@ namespace ProjetoCLR {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->btnMeninas = (gcnew System::Windows::Forms::Button());
-			this->btnMeninos = (gcnew System::Windows::Forms::Button());
+			this->btnMulheres = (gcnew System::Windows::Forms::Button());
+			this->btnHomens = (gcnew System::Windows::Forms::Button());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->btnLimparLista = (gcnew System::Windows::Forms::Button());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPauta))->BeginInit();
 			this->groupBox4->SuspendLayout();
-			this->panel1->SuspendLayout();
-			this->panel2->SuspendLayout();
-			this->panel3->SuspendLayout();
 			this->panel4->SuspendLayout();
+			this->panel3->SuspendLayout();
+			this->panel2->SuspendLayout();
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// dgvPauta
@@ -177,6 +181,30 @@ namespace ProjetoCLR {
 			this->dgvPauta->Size = System::Drawing::Size(424, 507);
 			this->dgvPauta->TabIndex = 0;
 			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"Nome";
+			this->Column1->Name = L"Column1";
+			this->Column1->Width = 72;
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Freguesia";
+			this->Column2->Name = L"Column2";
+			this->Column2->Width = 103;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"Idade";
+			this->Column3->Name = L"Column3";
+			this->Column3->Width = 71;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Sexo";
+			this->Column4->Name = L"Column4";
+			this->Column4->Width = 66;
+			// 
 			// btnContarPorFreguesia
 			// 
 			this->btnContarPorFreguesia->BackColor = System::Drawing::Color::SteelBlue;
@@ -198,7 +226,7 @@ namespace ProjetoCLR {
 			this->lstAuxiliar->FormattingEnabled = true;
 			this->lstAuxiliar->Location = System::Drawing::Point(726, 65);
 			this->lstAuxiliar->Name = L"lstAuxiliar";
-			this->lstAuxiliar->Size = System::Drawing::Size(203, 507);
+			this->lstAuxiliar->Size = System::Drawing::Size(203, 286);
 			this->lstAuxiliar->TabIndex = 2;
 			// 
 			// txtFreguesia
@@ -335,31 +363,33 @@ namespace ProjetoCLR {
 			this->label4->TabIndex = 5;
 			this->label4->Text = L"Nome";
 			// 
-			// btnMeninas
+			// btnMulheres
 			// 
-			this->btnMeninas->BackColor = System::Drawing::Color::SteelBlue;
-			this->btnMeninas->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnMulheres->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnMulheres->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnMeninas->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->btnMeninas->Location = System::Drawing::Point(155, 35);
-			this->btnMeninas->Name = L"btnMeninas";
-			this->btnMeninas->Size = System::Drawing::Size(86, 30);
-			this->btnMeninas->TabIndex = 7;
-			this->btnMeninas->Text = L"MULHERES";
-			this->btnMeninas->UseVisualStyleBackColor = false;
+			this->btnMulheres->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->btnMulheres->Location = System::Drawing::Point(155, 35);
+			this->btnMulheres->Name = L"btnMulheres";
+			this->btnMulheres->Size = System::Drawing::Size(86, 30);
+			this->btnMulheres->TabIndex = 7;
+			this->btnMulheres->Text = L"MULHERES";
+			this->btnMulheres->UseVisualStyleBackColor = false;
+			this->btnMulheres->Click += gcnew System::EventHandler(this, &Form1::btnMulheres_Click);
 			// 
-			// btnMeninos
+			// btnHomens
 			// 
-			this->btnMeninos->BackColor = System::Drawing::Color::SteelBlue;
-			this->btnMeninos->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnHomens->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnHomens->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnMeninos->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->btnMeninos->Location = System::Drawing::Point(24, 35);
-			this->btnMeninos->Name = L"btnMeninos";
-			this->btnMeninos->Size = System::Drawing::Size(93, 30);
-			this->btnMeninos->TabIndex = 6;
-			this->btnMeninos->Text = L"HOMENS";
-			this->btnMeninos->UseVisualStyleBackColor = false;
+			this->btnHomens->ForeColor = System::Drawing::SystemColors::ButtonFace;
+			this->btnHomens->Location = System::Drawing::Point(24, 35);
+			this->btnHomens->Name = L"btnHomens";
+			this->btnHomens->Size = System::Drawing::Size(93, 30);
+			this->btnHomens->TabIndex = 6;
+			this->btnHomens->Text = L"HOMENS";
+			this->btnHomens->UseVisualStyleBackColor = false;
+			this->btnHomens->Click += gcnew System::EventHandler(this, &Form1::btnHomens_Click);
 			// 
 			// label7
 			// 
@@ -373,32 +403,9 @@ namespace ProjetoCLR {
 			this->label7->TabIndex = 5;
 			this->label7->Text = L"Listagem dos Homens e Mulheres";
 			// 
-			// Column1
-			// 
-			this->Column1->HeaderText = L"Nome";
-			this->Column1->Name = L"Column1";
-			this->Column1->Width = 72;
-			// 
-			// Column2
-			// 
-			this->Column2->HeaderText = L"Freguesia";
-			this->Column2->Name = L"Column2";
-			this->Column2->Width = 103;
-			// 
-			// Column3
-			// 
-			this->Column3->HeaderText = L"Idade";
-			this->Column3->Name = L"Column3";
-			this->Column3->Width = 71;
-			// 
-			// Column4
-			// 
-			this->Column4->HeaderText = L"Sexo";
-			this->Column4->Name = L"Column4";
-			this->Column4->Width = 66;
-			// 
 			// groupBox4
 			// 
+			this->groupBox4->Controls->Add(this->btnLimparLista);
 			this->groupBox4->Controls->Add(this->panel4);
 			this->groupBox4->Controls->Add(this->panel3);
 			this->groupBox4->Controls->Add(this->panel2);
@@ -410,6 +417,29 @@ namespace ProjetoCLR {
 			this->groupBox4->Size = System::Drawing::Size(944, 587);
 			this->groupBox4->TabIndex = 10;
 			this->groupBox4->TabStop = false;
+			// 
+			// btnLimparLista
+			// 
+			this->btnLimparLista->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnLimparLista->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnLimparLista->ForeColor = System::Drawing::Color::White;
+			this->btnLimparLista->Location = System::Drawing::Point(726, 358);
+			this->btnLimparLista->Name = L"btnLimparLista";
+			this->btnLimparLista->Size = System::Drawing::Size(203, 30);
+			this->btnLimparLista->TabIndex = 14;
+			this->btnLimparLista->Text = L"LIMPAR LISTA";
+			this->btnLimparLista->UseVisualStyleBackColor = false;
+			this->btnLimparLista->Click += gcnew System::EventHandler(this, &Form1::btnLimparLista_Click);
+			// 
+			// panel4
+			// 
+			this->panel4->BackColor = System::Drawing::Color::SteelBlue;
+			this->panel4->Controls->Add(this->label8);
+			this->panel4->Location = System::Drawing::Point(15, 20);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(914, 37);
+			this->panel4->TabIndex = 13;
 			// 
 			// label8
 			// 
@@ -423,16 +453,19 @@ namespace ProjetoCLR {
 			this->label8->TabIndex = 1;
 			this->label8->Text = L"TURMA 20 B";
 			// 
-			// panel1
+			// panel3
 			// 
-			this->panel1->BackColor = System::Drawing::Color::LightBlue;
-			this->panel1->Controls->Add(this->btnMeninas);
-			this->panel1->Controls->Add(this->btnMeninos);
-			this->panel1->Controls->Add(this->label7);
-			this->panel1->Location = System::Drawing::Point(449, 316);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(266, 72);
-			this->panel1->TabIndex = 10;
+			this->panel3->BackColor = System::Drawing::Color::LightBlue;
+			this->panel3->Controls->Add(this->btnContarPorFreguesia);
+			this->panel3->Controls->Add(this->txtTotalFregueses);
+			this->panel3->Controls->Add(this->txtFreguesia);
+			this->panel3->Controls->Add(this->label1);
+			this->panel3->Controls->Add(this->label2);
+			this->panel3->Controls->Add(this->label3);
+			this->panel3->Location = System::Drawing::Point(449, 65);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(266, 112);
+			this->panel3->TabIndex = 12;
 			// 
 			// panel2
 			// 
@@ -449,28 +482,16 @@ namespace ProjetoCLR {
 			this->panel2->Size = System::Drawing::Size(266, 117);
 			this->panel2->TabIndex = 11;
 			// 
-			// panel3
+			// panel1
 			// 
-			this->panel3->BackColor = System::Drawing::Color::LightBlue;
-			this->panel3->Controls->Add(this->btnContarPorFreguesia);
-			this->panel3->Controls->Add(this->txtTotalFregueses);
-			this->panel3->Controls->Add(this->txtFreguesia);
-			this->panel3->Controls->Add(this->label1);
-			this->panel3->Controls->Add(this->label2);
-			this->panel3->Controls->Add(this->label3);
-			this->panel3->Location = System::Drawing::Point(449, 65);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(266, 112);
-			this->panel3->TabIndex = 12;
-			// 
-			// panel4
-			// 
-			this->panel4->BackColor = System::Drawing::Color::SteelBlue;
-			this->panel4->Controls->Add(this->label8);
-			this->panel4->Location = System::Drawing::Point(15, 20);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(914, 37);
-			this->panel4->TabIndex = 13;
+			this->panel1->BackColor = System::Drawing::Color::LightBlue;
+			this->panel1->Controls->Add(this->btnMulheres);
+			this->panel1->Controls->Add(this->btnHomens);
+			this->panel1->Controls->Add(this->label7);
+			this->panel1->Location = System::Drawing::Point(449, 316);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(266, 72);
+			this->panel1->TabIndex = 10;
 			// 
 			// Form1
 			// 
@@ -485,14 +506,14 @@ namespace ProjetoCLR {
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPauta))->EndInit();
 			this->groupBox4->ResumeLayout(false);
-			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
-			this->panel2->ResumeLayout(false);
-			this->panel2->PerformLayout();
-			this->panel3->ResumeLayout(false);
-			this->panel3->PerformLayout();
 			this->panel4->ResumeLayout(false);
 			this->panel4->PerformLayout();
+			this->panel3->ResumeLayout(false);
+			this->panel3->PerformLayout();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -544,6 +565,45 @@ namespace ProjetoCLR {
 
 		//Depois de terminado o Ciclo, o valor da variável "total" passa para a textBox "txtTotalFregueses"
 		txtTotalFregueses->Text = Convert::ToString(total);
+	}
+private: System::Void btnHomens_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+	//Enviar para a ListBox uma lista de todos os Homens da Turma 20 B
+
+
+	//A variável "localizar" conta o número de linhas menos a ultima "-1"
+	int localizar = dgvPauta->Rows->Count - 1;
+
+	//O ciclo FOR percorre todas as linhas e verifica se existe a letra "M" na última coluna "Cells [3]"
+	for (size_t i = 0; i < localizar; i++)
+	{
+		//Se encontrar a letra M
+		if ("M" == dgvPauta->Rows[i]->Cells[3]->Value)
+		{
+			//Adiciona o que está na coluna zero, neste caso o nome do aluno
+			lstAuxiliar->Items->Add(dgvPauta->Rows[i]->Cells[0]->Value);
+		}
+
+	}
+
+	}
+private: System::Void btnLimparLista_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		lstAuxiliar->Items->Clear();
+	}
+private: System::Void btnMulheres_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+	//Instruções identicas ao botão HOMENS, apenas trocamos para a letra F
+	int localizar = dgvPauta->Rows->Count - 1;
+
+	for (size_t i = 0; i < localizar; i++)
+	{
+		if ("F" == dgvPauta->Rows[i]->Cells[3]->Value)
+		{
+			lstAuxiliar->Items->Add(dgvPauta->Rows[i]->Cells[0]->Value);
+		}
+
+	}
 	}
 };
 }
