@@ -109,10 +109,14 @@ namespace ProjetoCLR {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle7 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle8 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle9 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->dgvPauta = (gcnew System::Windows::Forms::DataGridView());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->btnContarPorFreguesia = (gcnew System::Windows::Forms::Button());
 			this->lstAuxiliar = (gcnew System::Windows::Forms::ListBox());
 			this->txtFreguesia = (gcnew System::Windows::Forms::TextBox());
@@ -132,6 +136,8 @@ namespace ProjetoCLR {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
+			this->btnLimparGrid = (gcnew System::Windows::Forms::Button());
+			this->btnGerarNotas = (gcnew System::Windows::Forms::Button());
 			this->btnConfigurarGrid = (gcnew System::Windows::Forms::Button());
 			this->btnPreencherGrid = (gcnew System::Windows::Forms::Button());
 			this->label10 = (gcnew System::Windows::Forms::Label());
@@ -145,12 +151,6 @@ namespace ProjetoCLR {
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->btnGerarNotas = (gcnew System::Windows::Forms::Button());
-			this->btnLimparGrid = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPauta))->BeginInit();
 			this->groupBox4->SuspendLayout();
 			this->panel6->SuspendLayout();
@@ -167,44 +167,68 @@ namespace ProjetoCLR {
 			this->dgvPauta->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dgvPauta->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::SingleHorizontal;
 			this->dgvPauta->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Single;
-			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle1->BackColor = System::Drawing::Color::SteelBlue;
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dgvPauta->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle7->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle7->BackColor = System::Drawing::Color::SteelBlue;
+			dataGridViewCellStyle7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold));
+			dataGridViewCellStyle7->ForeColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle7->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle7->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle7->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgvPauta->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this->dgvPauta->ColumnHeadersHeight = 27;
 			this->dgvPauta->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
 				this->Column1, this->Column2,
 					this->Column3, this->Column4
 			});
-			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle2->BackColor = System::Drawing::Color::LightBlue;
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle8->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle8->BackColor = System::Drawing::Color::LightBlue;
+			dataGridViewCellStyle8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dgvPauta->DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle8->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle8->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle8->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle8->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dgvPauta->DefaultCellStyle = dataGridViewCellStyle8;
 			this->dgvPauta->EnableHeadersVisualStyles = false;
 			this->dgvPauta->GridColor = System::Drawing::Color::White;
 			this->dgvPauta->Location = System::Drawing::Point(15, 65);
 			this->dgvPauta->Name = L"dgvPauta";
 			this->dgvPauta->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Single;
-			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle3->BackColor = System::Drawing::Color::LightBlue;
-			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle9->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle9->BackColor = System::Drawing::Color::LightBlue;
+			dataGridViewCellStyle9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dgvPauta->RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-			this->dgvPauta->Size = System::Drawing::Size(818, 507);
+			dataGridViewCellStyle9->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle9->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle9->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle9->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgvPauta->RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+			this->dgvPauta->Size = System::Drawing::Size(681, 507);
 			this->dgvPauta->TabIndex = 0;
+			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"Nome";
+			this->Column1->Name = L"Column1";
+			this->Column1->Width = 72;
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Freguesia";
+			this->Column2->Name = L"Column2";
+			this->Column2->Width = 103;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"Ano";
+			this->Column3->Name = L"Column3";
+			this->Column3->Width = 71;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Sexo";
+			this->Column4->Name = L"Column4";
+			this->Column4->Width = 66;
 			// 
 			// btnContarPorFreguesia
 			// 
@@ -214,9 +238,9 @@ namespace ProjetoCLR {
 			this->btnContarPorFreguesia->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btnContarPorFreguesia->Location = System::Drawing::Point(5, 28);
 			this->btnContarPorFreguesia->Name = L"btnContarPorFreguesia";
-			this->btnContarPorFreguesia->Size = System::Drawing::Size(254, 30);
+			this->btnContarPorFreguesia->Size = System::Drawing::Size(230, 30);
 			this->btnContarPorFreguesia->TabIndex = 1;
-			this->btnContarPorFreguesia->Text = L"Digite o Nome da Freguesia e Clique aqui";
+			this->btnContarPorFreguesia->Text = L"Digite o Nome da Freguesia e Clique";
 			this->btnContarPorFreguesia->UseVisualStyleBackColor = false;
 			this->btnContarPorFreguesia->Click += gcnew System::EventHandler(this, &Form1::btnContarPorFreguesia_Click);
 			// 
@@ -225,7 +249,7 @@ namespace ProjetoCLR {
 			this->lstAuxiliar->BackColor = System::Drawing::Color::LightBlue;
 			this->lstAuxiliar->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->lstAuxiliar->FormattingEnabled = true;
-			this->lstAuxiliar->Location = System::Drawing::Point(1120, 65);
+			this->lstAuxiliar->Location = System::Drawing::Point(963, 65);
 			this->lstAuxiliar->Name = L"lstAuxiliar";
 			this->lstAuxiliar->Size = System::Drawing::Size(163, 468);
 			this->lstAuxiliar->TabIndex = 2;
@@ -247,7 +271,7 @@ namespace ProjetoCLR {
 			this->txtTotalFregueses->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtTotalFregueses->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtTotalFregueses->Location = System::Drawing::Point(178, 76);
+			this->txtTotalFregueses->Location = System::Drawing::Point(157, 76);
 			this->txtTotalFregueses->Multiline = true;
 			this->txtTotalFregueses->Name = L"txtTotalFregueses";
 			this->txtTotalFregueses->Size = System::Drawing::Size(80, 16);
@@ -266,7 +290,7 @@ namespace ProjetoCLR {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(199, 62);
+			this->label2->Location = System::Drawing::Point(176, 62);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(31, 13);
 			this->label2->TabIndex = 5;
@@ -278,11 +302,11 @@ namespace ProjetoCLR {
 			this->btnMaisVelho->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnMaisVelho->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->btnMaisVelho->Location = System::Drawing::Point(5, 35);
+			this->btnMaisVelho->Location = System::Drawing::Point(9, 35);
 			this->btnMaisVelho->Name = L"btnMaisVelho";
-			this->btnMaisVelho->Size = System::Drawing::Size(112, 30);
+			this->btnMaisVelho->Size = System::Drawing::Size(108, 30);
 			this->btnMaisVelho->TabIndex = 6;
-			this->btnMaisVelho->Text = L"Aluno mais Velho";
+			this->btnMaisVelho->Text = L"Aluno + Velho";
 			this->btnMaisVelho->UseVisualStyleBackColor = false;
 			this->btnMaisVelho->Click += gcnew System::EventHandler(this, &Form1::btnMaisVelho_Click);
 			// 
@@ -292,7 +316,7 @@ namespace ProjetoCLR {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::DarkSlateGray;
-			this->label3->Location = System::Drawing::Point(46, 4);
+			this->label3->Location = System::Drawing::Point(32, 4);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(173, 17);
 			this->label3->TabIndex = 5;
@@ -304,11 +328,11 @@ namespace ProjetoCLR {
 			this->btnMaisNovo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnMaisNovo->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->btnMaisNovo->Location = System::Drawing::Point(142, 35);
+			this->btnMaisNovo->Location = System::Drawing::Point(128, 35);
 			this->btnMaisNovo->Name = L"btnMaisNovo";
-			this->btnMaisNovo->Size = System::Drawing::Size(116, 30);
+			this->btnMaisNovo->Size = System::Drawing::Size(107, 30);
 			this->btnMaisNovo->TabIndex = 9;
-			this->btnMaisNovo->Text = L"Aluno mais Novo";
+			this->btnMaisNovo->Text = L"Aluno + Novo";
 			this->btnMaisNovo->UseVisualStyleBackColor = false;
 			this->btnMaisNovo->Click += gcnew System::EventHandler(this, &Form1::btnMaisNovo_Click);
 			// 
@@ -317,7 +341,7 @@ namespace ProjetoCLR {
 			this->txtIdadeAluno->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->txtIdadeAluno->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->txtIdadeAluno->Location = System::Drawing::Point(201, 84);
+			this->txtIdadeAluno->Location = System::Drawing::Point(179, 84);
 			this->txtIdadeAluno->Multiline = true;
 			this->txtIdadeAluno->Name = L"txtIdadeAluno";
 			this->txtIdadeAluno->Size = System::Drawing::Size(56, 16);
@@ -332,14 +356,14 @@ namespace ProjetoCLR {
 			this->txtNomeAluno->Location = System::Drawing::Point(8, 84);
 			this->txtNomeAluno->Multiline = true;
 			this->txtNomeAluno->Name = L"txtNomeAluno";
-			this->txtNomeAluno->Size = System::Drawing::Size(178, 16);
+			this->txtNomeAluno->Size = System::Drawing::Size(155, 16);
 			this->txtNomeAluno->TabIndex = 7;
 			this->txtNomeAluno->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(212, 71);
+			this->label5->Location = System::Drawing::Point(190, 71);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(34, 13);
 			this->label5->TabIndex = 5;
@@ -372,9 +396,9 @@ namespace ProjetoCLR {
 			this->btnMulheres->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnMulheres->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->btnMulheres->Location = System::Drawing::Point(160, 30);
+			this->btnMulheres->Location = System::Drawing::Point(128, 30);
 			this->btnMulheres->Name = L"btnMulheres";
-			this->btnMulheres->Size = System::Drawing::Size(86, 30);
+			this->btnMulheres->Size = System::Drawing::Size(109, 30);
 			this->btnMulheres->TabIndex = 7;
 			this->btnMulheres->Text = L"MULHERES";
 			this->btnMulheres->UseVisualStyleBackColor = false;
@@ -386,9 +410,9 @@ namespace ProjetoCLR {
 			this->btnHomens->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnHomens->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->btnHomens->Location = System::Drawing::Point(24, 30);
+			this->btnHomens->Location = System::Drawing::Point(9, 30);
 			this->btnHomens->Name = L"btnHomens";
-			this->btnHomens->Size = System::Drawing::Size(93, 30);
+			this->btnHomens->Size = System::Drawing::Size(108, 30);
 			this->btnHomens->TabIndex = 6;
 			this->btnHomens->Text = L"HOMENS";
 			this->btnHomens->UseVisualStyleBackColor = false;
@@ -400,11 +424,11 @@ namespace ProjetoCLR {
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::DarkSlateGray;
-			this->label7->Location = System::Drawing::Point(3, 4);
+			this->label7->Location = System::Drawing::Point(14, 4);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(252, 17);
+			this->label7->Size = System::Drawing::Size(221, 17);
 			this->label7->TabIndex = 5;
-			this->label7->Text = L"Listagem dos Homens e Mulheres";
+			this->label7->Text = L"Listagem Homens e Mulheres";
 			// 
 			// groupBox4
 			// 
@@ -419,7 +443,7 @@ namespace ProjetoCLR {
 			this->groupBox4->Controls->Add(this->dgvPauta);
 			this->groupBox4->Location = System::Drawing::Point(12, 12);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(1295, 587);
+			this->groupBox4->Size = System::Drawing::Size(1139, 587);
 			this->groupBox4->TabIndex = 10;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Enter += gcnew System::EventHandler(this, &Form1::groupBox4_Enter);
@@ -432,10 +456,37 @@ namespace ProjetoCLR {
 			this->panel6->Controls->Add(this->btnConfigurarGrid);
 			this->panel6->Controls->Add(this->btnPreencherGrid);
 			this->panel6->Controls->Add(this->label10);
-			this->panel6->Location = System::Drawing::Point(843, 477);
+			this->panel6->Location = System::Drawing::Point(706, 477);
 			this->panel6->Name = L"panel6";
-			this->panel6->Size = System::Drawing::Size(266, 95);
+			this->panel6->Size = System::Drawing::Size(246, 95);
 			this->panel6->TabIndex = 16;
+			// 
+			// btnLimparGrid
+			// 
+			this->btnLimparGrid->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnLimparGrid->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnLimparGrid->ForeColor = System::Drawing::Color::White;
+			this->btnLimparGrid->Location = System::Drawing::Point(128, 58);
+			this->btnLimparGrid->Name = L"btnLimparGrid";
+			this->btnLimparGrid->Size = System::Drawing::Size(109, 30);
+			this->btnLimparGrid->TabIndex = 7;
+			this->btnLimparGrid->Text = L"Limpar Grid";
+			this->btnLimparGrid->UseVisualStyleBackColor = false;
+			this->btnLimparGrid->Click += gcnew System::EventHandler(this, &Form1::btnLimparGrid_Click);
+			// 
+			// btnGerarNotas
+			// 
+			this->btnGerarNotas->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnGerarNotas->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnGerarNotas->ForeColor = System::Drawing::Color::White;
+			this->btnGerarNotas->Location = System::Drawing::Point(9, 58);
+			this->btnGerarNotas->Name = L"btnGerarNotas";
+			this->btnGerarNotas->Size = System::Drawing::Size(108, 30);
+			this->btnGerarNotas->TabIndex = 6;
+			this->btnGerarNotas->Text = L"Gerar Notas";
+			this->btnGerarNotas->UseVisualStyleBackColor = false;
 			// 
 			// btnConfigurarGrid
 			// 
@@ -443,7 +494,7 @@ namespace ProjetoCLR {
 			this->btnConfigurarGrid->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnConfigurarGrid->ForeColor = System::Drawing::Color::White;
-			this->btnConfigurarGrid->Location = System::Drawing::Point(144, 24);
+			this->btnConfigurarGrid->Location = System::Drawing::Point(128, 24);
 			this->btnConfigurarGrid->Name = L"btnConfigurarGrid";
 			this->btnConfigurarGrid->Size = System::Drawing::Size(109, 30);
 			this->btnConfigurarGrid->TabIndex = 1;
@@ -471,7 +522,7 @@ namespace ProjetoCLR {
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::Color::DarkSlateGray;
-			this->label10->Location = System::Drawing::Point(13, 3);
+			this->label10->Location = System::Drawing::Point(2, 3);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(242, 17);
 			this->label10->TabIndex = 5;
@@ -483,9 +534,9 @@ namespace ProjetoCLR {
 			this->panel5->Controls->Add(this->btnDesabilitarGrid);
 			this->panel5->Controls->Add(this->btnAbilitarGrid);
 			this->panel5->Controls->Add(this->label9);
-			this->panel5->Location = System::Drawing::Point(843, 393);
+			this->panel5->Location = System::Drawing::Point(706, 393);
 			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(266, 72);
+			this->panel5->Size = System::Drawing::Size(246, 72);
 			this->panel5->TabIndex = 15;
 			// 
 			// btnDesabilitarGrid
@@ -494,9 +545,9 @@ namespace ProjetoCLR {
 			this->btnDesabilitarGrid->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnDesabilitarGrid->ForeColor = System::Drawing::Color::White;
-			this->btnDesabilitarGrid->Location = System::Drawing::Point(144, 30);
+			this->btnDesabilitarGrid->Location = System::Drawing::Point(128, 30);
 			this->btnDesabilitarGrid->Name = L"btnDesabilitarGrid";
-			this->btnDesabilitarGrid->Size = System::Drawing::Size(113, 30);
+			this->btnDesabilitarGrid->Size = System::Drawing::Size(109, 30);
 			this->btnDesabilitarGrid->TabIndex = 1;
 			this->btnDesabilitarGrid->Text = L"Desativar Grid";
 			this->btnDesabilitarGrid->UseVisualStyleBackColor = false;
@@ -508,9 +559,9 @@ namespace ProjetoCLR {
 			this->btnAbilitarGrid->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnAbilitarGrid->ForeColor = System::Drawing::Color::White;
-			this->btnAbilitarGrid->Location = System::Drawing::Point(8, 30);
+			this->btnAbilitarGrid->Location = System::Drawing::Point(9, 30);
 			this->btnAbilitarGrid->Name = L"btnAbilitarGrid";
-			this->btnAbilitarGrid->Size = System::Drawing::Size(113, 30);
+			this->btnAbilitarGrid->Size = System::Drawing::Size(108, 30);
 			this->btnAbilitarGrid->TabIndex = 0;
 			this->btnAbilitarGrid->Text = L"Ativar Grid";
 			this->btnAbilitarGrid->UseVisualStyleBackColor = false;
@@ -522,7 +573,7 @@ namespace ProjetoCLR {
 			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label9->ForeColor = System::Drawing::Color::DarkSlateGray;
-			this->label9->Location = System::Drawing::Point(29, 4);
+			this->label9->Location = System::Drawing::Point(21, 4);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(203, 17);
 			this->label9->TabIndex = 5;
@@ -534,7 +585,7 @@ namespace ProjetoCLR {
 			this->btnLimparLista->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnLimparLista->ForeColor = System::Drawing::Color::White;
-			this->btnLimparLista->Location = System::Drawing::Point(1120, 542);
+			this->btnLimparLista->Location = System::Drawing::Point(963, 542);
 			this->btnLimparLista->Name = L"btnLimparLista";
 			this->btnLimparLista->Size = System::Drawing::Size(163, 30);
 			this->btnLimparLista->TabIndex = 14;
@@ -548,7 +599,7 @@ namespace ProjetoCLR {
 			this->panel4->Controls->Add(this->label8);
 			this->panel4->Location = System::Drawing::Point(15, 20);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(1268, 37);
+			this->panel4->Size = System::Drawing::Size(1111, 37);
 			this->panel4->TabIndex = 13;
 			// 
 			// label8
@@ -572,9 +623,9 @@ namespace ProjetoCLR {
 			this->panel3->Controls->Add(this->label1);
 			this->panel3->Controls->Add(this->label2);
 			this->panel3->Controls->Add(this->label3);
-			this->panel3->Location = System::Drawing::Point(843, 65);
+			this->panel3->Location = System::Drawing::Point(706, 65);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(266, 105);
+			this->panel3->Size = System::Drawing::Size(246, 105);
 			this->panel3->TabIndex = 12;
 			// 
 			// panel2
@@ -587,9 +638,9 @@ namespace ProjetoCLR {
 			this->panel2->Controls->Add(this->txtNomeAluno);
 			this->panel2->Controls->Add(this->label6);
 			this->panel2->Controls->Add(this->btnMaisVelho);
-			this->panel2->Location = System::Drawing::Point(843, 181);
+			this->panel2->Location = System::Drawing::Point(706, 181);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(266, 117);
+			this->panel2->Size = System::Drawing::Size(246, 117);
 			this->panel2->TabIndex = 11;
 			// 
 			// panel1
@@ -598,67 +649,16 @@ namespace ProjetoCLR {
 			this->panel1->Controls->Add(this->btnMulheres);
 			this->panel1->Controls->Add(this->btnHomens);
 			this->panel1->Controls->Add(this->label7);
-			this->panel1->Location = System::Drawing::Point(843, 309);
+			this->panel1->Location = System::Drawing::Point(706, 309);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(266, 72);
+			this->panel1->Size = System::Drawing::Size(246, 72);
 			this->panel1->TabIndex = 10;
-			// 
-			// Column1
-			// 
-			this->Column1->HeaderText = L"Nome";
-			this->Column1->Name = L"Column1";
-			this->Column1->Width = 72;
-			// 
-			// Column2
-			// 
-			this->Column2->HeaderText = L"Freguesia";
-			this->Column2->Name = L"Column2";
-			this->Column2->Width = 103;
-			// 
-			// Column3
-			// 
-			this->Column3->HeaderText = L"Ano";
-			this->Column3->Name = L"Column3";
-			this->Column3->Width = 71;
-			// 
-			// Column4
-			// 
-			this->Column4->HeaderText = L"Sexo";
-			this->Column4->Name = L"Column4";
-			this->Column4->Width = 66;
-			// 
-			// btnGerarNotas
-			// 
-			this->btnGerarNotas->BackColor = System::Drawing::Color::SteelBlue;
-			this->btnGerarNotas->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnGerarNotas->ForeColor = System::Drawing::Color::White;
-			this->btnGerarNotas->Location = System::Drawing::Point(9, 58);
-			this->btnGerarNotas->Name = L"btnGerarNotas";
-			this->btnGerarNotas->Size = System::Drawing::Size(108, 30);
-			this->btnGerarNotas->TabIndex = 6;
-			this->btnGerarNotas->Text = L"Gerar Notas";
-			this->btnGerarNotas->UseVisualStyleBackColor = false;
-			// 
-			// btnLimparGrid
-			// 
-			this->btnLimparGrid->BackColor = System::Drawing::Color::SteelBlue;
-			this->btnLimparGrid->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnLimparGrid->ForeColor = System::Drawing::Color::White;
-			this->btnLimparGrid->Location = System::Drawing::Point(144, 58);
-			this->btnLimparGrid->Name = L"btnLimparGrid";
-			this->btnLimparGrid->Size = System::Drawing::Size(109, 30);
-			this->btnLimparGrid->TabIndex = 7;
-			this->btnLimparGrid->Text = L"Limpar Grid";
-			this->btnLimparGrid->UseVisualStyleBackColor = false;
-			this->btnLimparGrid->Click += gcnew System::EventHandler(this, &Form1::btnLimparGrid_Click);
 			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1322, 628);
+			this->ClientSize = System::Drawing::Size(1164, 628);
 			this->Controls->Add(this->groupBox4);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"Form1";
@@ -848,16 +848,16 @@ private: System::Void groupBox4_Enter(System::Object^ sender, System::EventArgs^
 		   //criar a coluna 5:
 		   dgvPauta->Columns[4]->Name = "d1";
 		   //definir o cabeçalho para a coluna 6:
-		   dgvPauta->Columns[4]->HeaderText = "POR";
-		   dgvPauta->Columns[5]->Name = "d2"; dgvPauta->Columns[5]->HeaderText = "ING";
-		   dgvPauta->Columns[6]->Name = "d3"; dgvPauta->Columns[6]->HeaderText = "FIL";
-		   dgvPauta->Columns[7]->Name = "d4"; dgvPauta->Columns[7]->HeaderText = "MAT";
-		   dgvPauta->Columns[8]->Name = "d5"; dgvPauta->Columns[8]->HeaderText = "FÍS";
-		   dgvPauta->Columns[9]->Name = "d6"; dgvPauta->Columns[9]->HeaderText = "QUÍ";
-		   dgvPauta->Columns[10]->Name = "d7"; dgvPauta->Columns[10]->HeaderText = "GEO";
-		   dgvPauta->Columns[11]->Name = "d8"; dgvPauta->Columns[11]->HeaderText = "HIS";
+		   dgvPauta->Columns[4]->HeaderText = "Por";
+		   dgvPauta->Columns[5]->Name = "d2"; dgvPauta->Columns[5]->HeaderText = "Ing";
+		   dgvPauta->Columns[6]->Name = "d3"; dgvPauta->Columns[6]->HeaderText = "Fil";
+		   dgvPauta->Columns[7]->Name = "d4"; dgvPauta->Columns[7]->HeaderText = "Mat";
+		   dgvPauta->Columns[8]->Name = "d5"; dgvPauta->Columns[8]->HeaderText = "Fís";
+		   dgvPauta->Columns[9]->Name = "d6"; dgvPauta->Columns[9]->HeaderText = "Quí";
+		   dgvPauta->Columns[10]->Name = "d7"; dgvPauta->Columns[10]->HeaderText = "Geo";
+		   dgvPauta->Columns[11]->Name = "d8"; dgvPauta->Columns[11]->HeaderText = "His";
 		   dgvPauta->Columns[12]->Name = "d9"; dgvPauta->Columns[12]->HeaderText = "EF";
-		   dgvPauta->Columns[13]->Name = "d10"; dgvPauta->Columns[13]->HeaderText = "MOR";
+		   dgvPauta->Columns[13]->Name = "d10"; dgvPauta->Columns[13]->HeaderText = "Mor";
 
 	   }
 
@@ -872,17 +872,17 @@ private: System::Void groupBox4_Enter(System::Object^ sender, System::EventArgs^
 				//Defenir a largura das colunas
 				for (int i = 4; i < 14; i++)
 				{
-					dgvPauta->Columns[i]->Width = 45;
+					dgvPauta->Columns[i]->Width = 34;
 				}
 
 				//Idade 
-				dgvPauta->Columns[2]->Width = 50;
+				dgvPauta->Columns[2]->Width = 40;
 
 				//sexo
-				dgvPauta->Columns[3]->Width = 50;
+				dgvPauta->Columns[3]->Width = 40;
 
 				//nome
-				dgvPauta->Columns[0]->Width = 150;
+				dgvPauta->Columns[0]->Width = 142;
 
 				//freguesia
 				dgvPauta->Columns[1]->Width = 77;
