@@ -309,6 +309,7 @@ namespace ProjetoCLR {
 			this->btnMaisNovo->TabIndex = 9;
 			this->btnMaisNovo->Text = L"Aluno mais Novo";
 			this->btnMaisNovo->UseVisualStyleBackColor = false;
+			this->btnMaisNovo->Click += gcnew System::EventHandler(this, &Form1::btnMaisNovo_Click);
 			// 
 			// txtIdadeAluno
 			// 
@@ -640,5 +641,25 @@ private: System::Void btnMaisVelho_Click(System::Object^ sender, System::EventAr
 		txtIdadeAluno->Text = Convert::ToString(2021 - maisVelho) + " Anos";
 	
 	}
+private: System::Void btnMaisNovo_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+	int maisNovo = Convert::ToInt16(dgvPauta->Rows[0]->Cells[2]->Value);
+	String^ nome = "";
+
+	for (size_t i = 0; i < dgvPauta->Rows->Count - 1; i++)
+	{
+		if (maisNovo < Convert::ToInt16(dgvPauta->Rows[i]->Cells[2]->Value))
+		{
+			maisNovo = Convert::ToInt16(dgvPauta->Rows[i]->Cells[2]->Value);
+			nome = Convert::ToString(dgvPauta->Rows[i]->Cells[0]->Value);
+		}
+	}
+
+
+	lstAuxiliar->Items->Add(nome + Convert::ToString(2021 - maisNovo) + " Anos");
+
+
+	}
+	  
 };
 }
