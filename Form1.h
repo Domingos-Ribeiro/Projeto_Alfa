@@ -629,21 +629,30 @@ namespace ProjetoCLR {
 			// 
 			// btnGerarNotas
 			// 
-			this->btnGerarNotas->Location = System::Drawing::Point(9, 65);
+			this->btnGerarNotas->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnGerarNotas->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnGerarNotas->ForeColor = System::Drawing::Color::White;
+			this->btnGerarNotas->Location = System::Drawing::Point(9, 58);
 			this->btnGerarNotas->Name = L"btnGerarNotas";
-			this->btnGerarNotas->Size = System::Drawing::Size(108, 23);
+			this->btnGerarNotas->Size = System::Drawing::Size(108, 30);
 			this->btnGerarNotas->TabIndex = 6;
 			this->btnGerarNotas->Text = L"Gerar Notas";
-			this->btnGerarNotas->UseVisualStyleBackColor = true;
+			this->btnGerarNotas->UseVisualStyleBackColor = false;
 			// 
 			// btnLimparGrid
 			// 
-			this->btnLimparGrid->Location = System::Drawing::Point(144, 65);
+			this->btnLimparGrid->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnLimparGrid->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnLimparGrid->ForeColor = System::Drawing::Color::White;
+			this->btnLimparGrid->Location = System::Drawing::Point(144, 58);
 			this->btnLimparGrid->Name = L"btnLimparGrid";
-			this->btnLimparGrid->Size = System::Drawing::Size(109, 23);
+			this->btnLimparGrid->Size = System::Drawing::Size(109, 30);
 			this->btnLimparGrid->TabIndex = 7;
 			this->btnLimparGrid->Text = L"Limpar Grid";
-			this->btnLimparGrid->UseVisualStyleBackColor = true;
+			this->btnLimparGrid->UseVisualStyleBackColor = false;
+			this->btnLimparGrid->Click += gcnew System::EventHandler(this, &Form1::btnLimparGrid_Click);
 			// 
 			// Form1
 			// 
@@ -887,6 +896,10 @@ private: System::Void btnPreencherGrid_Click(System::Object^ sender, System::Eve
 private: System::Void btnConfigurarGrid_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 		ConfigurarGrid();
+	}
+private: System::Void btnLimparGrid_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		dgvPauta->Rows->Clear();
 	}
 };
 }
