@@ -69,10 +69,10 @@ namespace ProjetoCLR {
 	private: System::Windows::Forms::Button^ btnHomens;
 
 	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
+
+
+
+
 	private: System::Windows::Forms::GroupBox^ groupBox4;
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Panel^ panel1;
@@ -84,6 +84,16 @@ namespace ProjetoCLR {
 	private: System::Windows::Forms::Button^ btnDesabilitarGrid;
 	private: System::Windows::Forms::Button^ btnAbilitarGrid;
 	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Panel^ panel6;
+	private: System::Windows::Forms::Button^ btnConfigurarGrid;
+	private: System::Windows::Forms::Button^ btnPreencherGrid;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
+	private: System::Windows::Forms::Button^ btnLimparGrid;
+	private: System::Windows::Forms::Button^ btnGerarNotas;
 	protected:
 
 	private:
@@ -103,10 +113,6 @@ namespace ProjetoCLR {
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->dgvPauta = (gcnew System::Windows::Forms::DataGridView());
-			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->btnContarPorFreguesia = (gcnew System::Windows::Forms::Button());
 			this->lstAuxiliar = (gcnew System::Windows::Forms::ListBox());
 			this->txtFreguesia = (gcnew System::Windows::Forms::TextBox());
@@ -125,6 +131,10 @@ namespace ProjetoCLR {
 			this->btnHomens = (gcnew System::Windows::Forms::Button());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
+			this->panel6 = (gcnew System::Windows::Forms::Panel());
+			this->btnConfigurarGrid = (gcnew System::Windows::Forms::Button());
+			this->btnPreencherGrid = (gcnew System::Windows::Forms::Button());
+			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->btnDesabilitarGrid = (gcnew System::Windows::Forms::Button());
 			this->btnAbilitarGrid = (gcnew System::Windows::Forms::Button());
@@ -135,8 +145,15 @@ namespace ProjetoCLR {
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->btnGerarNotas = (gcnew System::Windows::Forms::Button());
+			this->btnLimparGrid = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPauta))->BeginInit();
 			this->groupBox4->SuspendLayout();
+			this->panel6->SuspendLayout();
 			this->panel5->SuspendLayout();
 			this->panel4->SuspendLayout();
 			this->panel3->SuspendLayout();
@@ -186,32 +203,8 @@ namespace ProjetoCLR {
 			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
 			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
 			this->dgvPauta->RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-			this->dgvPauta->Size = System::Drawing::Size(1010, 507);
+			this->dgvPauta->Size = System::Drawing::Size(818, 507);
 			this->dgvPauta->TabIndex = 0;
-			// 
-			// Column1
-			// 
-			this->Column1->HeaderText = L"Nome";
-			this->Column1->Name = L"Column1";
-			this->Column1->Width = 72;
-			// 
-			// Column2
-			// 
-			this->Column2->HeaderText = L"Freguesia";
-			this->Column2->Name = L"Column2";
-			this->Column2->Width = 103;
-			// 
-			// Column3
-			// 
-			this->Column3->HeaderText = L"Idade";
-			this->Column3->Name = L"Column3";
-			this->Column3->Width = 71;
-			// 
-			// Column4
-			// 
-			this->Column4->HeaderText = L"Sexo";
-			this->Column4->Name = L"Column4";
-			this->Column4->Width = 66;
 			// 
 			// btnContarPorFreguesia
 			// 
@@ -232,9 +225,9 @@ namespace ProjetoCLR {
 			this->lstAuxiliar->BackColor = System::Drawing::Color::LightBlue;
 			this->lstAuxiliar->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->lstAuxiliar->FormattingEnabled = true;
-			this->lstAuxiliar->Location = System::Drawing::Point(1327, 70);
+			this->lstAuxiliar->Location = System::Drawing::Point(1120, 65);
 			this->lstAuxiliar->Name = L"lstAuxiliar";
-			this->lstAuxiliar->Size = System::Drawing::Size(203, 364);
+			this->lstAuxiliar->Size = System::Drawing::Size(163, 468);
 			this->lstAuxiliar->TabIndex = 2;
 			// 
 			// txtFreguesia
@@ -415,6 +408,7 @@ namespace ProjetoCLR {
 			// 
 			// groupBox4
 			// 
+			this->groupBox4->Controls->Add(this->panel6);
 			this->groupBox4->Controls->Add(this->panel5);
 			this->groupBox4->Controls->Add(this->btnLimparLista);
 			this->groupBox4->Controls->Add(this->panel4);
@@ -425,10 +419,63 @@ namespace ProjetoCLR {
 			this->groupBox4->Controls->Add(this->dgvPauta);
 			this->groupBox4->Location = System::Drawing::Point(12, 12);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(1543, 587);
+			this->groupBox4->Size = System::Drawing::Size(1295, 587);
 			this->groupBox4->TabIndex = 10;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Enter += gcnew System::EventHandler(this, &Form1::groupBox4_Enter);
+			// 
+			// panel6
+			// 
+			this->panel6->BackColor = System::Drawing::Color::LightBlue;
+			this->panel6->Controls->Add(this->btnLimparGrid);
+			this->panel6->Controls->Add(this->btnGerarNotas);
+			this->panel6->Controls->Add(this->btnConfigurarGrid);
+			this->panel6->Controls->Add(this->btnPreencherGrid);
+			this->panel6->Controls->Add(this->label10);
+			this->panel6->Location = System::Drawing::Point(843, 477);
+			this->panel6->Name = L"panel6";
+			this->panel6->Size = System::Drawing::Size(266, 95);
+			this->panel6->TabIndex = 16;
+			// 
+			// btnConfigurarGrid
+			// 
+			this->btnConfigurarGrid->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnConfigurarGrid->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnConfigurarGrid->ForeColor = System::Drawing::Color::White;
+			this->btnConfigurarGrid->Location = System::Drawing::Point(144, 24);
+			this->btnConfigurarGrid->Name = L"btnConfigurarGrid";
+			this->btnConfigurarGrid->Size = System::Drawing::Size(109, 30);
+			this->btnConfigurarGrid->TabIndex = 1;
+			this->btnConfigurarGrid->Text = L"Configurar Grid";
+			this->btnConfigurarGrid->UseVisualStyleBackColor = false;
+			this->btnConfigurarGrid->Click += gcnew System::EventHandler(this, &Form1::btnConfigurarGrid_Click);
+			// 
+			// btnPreencherGrid
+			// 
+			this->btnPreencherGrid->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnPreencherGrid->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnPreencherGrid->ForeColor = System::Drawing::Color::White;
+			this->btnPreencherGrid->Location = System::Drawing::Point(9, 24);
+			this->btnPreencherGrid->Name = L"btnPreencherGrid";
+			this->btnPreencherGrid->Size = System::Drawing::Size(109, 30);
+			this->btnPreencherGrid->TabIndex = 0;
+			this->btnPreencherGrid->Text = L"Preencher Grid";
+			this->btnPreencherGrid->UseVisualStyleBackColor = false;
+			this->btnPreencherGrid->Click += gcnew System::EventHandler(this, &Form1::btnPreencherGrid_Click);
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label10->ForeColor = System::Drawing::Color::DarkSlateGray;
+			this->label10->Location = System::Drawing::Point(13, 3);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(242, 17);
+			this->label10->TabIndex = 5;
+			this->label10->Text = L"Preenchimento da DataGridView";
 			// 
 			// panel5
 			// 
@@ -436,7 +483,7 @@ namespace ProjetoCLR {
 			this->panel5->Controls->Add(this->btnDesabilitarGrid);
 			this->panel5->Controls->Add(this->btnAbilitarGrid);
 			this->panel5->Controls->Add(this->label9);
-			this->panel5->Location = System::Drawing::Point(1050, 405);
+			this->panel5->Location = System::Drawing::Point(843, 393);
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(266, 72);
 			this->panel5->TabIndex = 15;
@@ -487,9 +534,9 @@ namespace ProjetoCLR {
 			this->btnLimparLista->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnLimparLista->ForeColor = System::Drawing::Color::White;
-			this->btnLimparLista->Location = System::Drawing::Point(1327, 447);
+			this->btnLimparLista->Location = System::Drawing::Point(1120, 542);
 			this->btnLimparLista->Name = L"btnLimparLista";
-			this->btnLimparLista->Size = System::Drawing::Size(203, 30);
+			this->btnLimparLista->Size = System::Drawing::Size(163, 30);
 			this->btnLimparLista->TabIndex = 14;
 			this->btnLimparLista->Text = L"LIMPAR LISTA";
 			this->btnLimparLista->UseVisualStyleBackColor = false;
@@ -501,7 +548,7 @@ namespace ProjetoCLR {
 			this->panel4->Controls->Add(this->label8);
 			this->panel4->Location = System::Drawing::Point(15, 20);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(1515, 37);
+			this->panel4->Size = System::Drawing::Size(1268, 37);
 			this->panel4->TabIndex = 13;
 			// 
 			// label8
@@ -525,9 +572,9 @@ namespace ProjetoCLR {
 			this->panel3->Controls->Add(this->label1);
 			this->panel3->Controls->Add(this->label2);
 			this->panel3->Controls->Add(this->label3);
-			this->panel3->Location = System::Drawing::Point(1050, 70);
+			this->panel3->Location = System::Drawing::Point(843, 65);
 			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(266, 112);
+			this->panel3->Size = System::Drawing::Size(266, 105);
 			this->panel3->TabIndex = 12;
 			// 
 			// panel2
@@ -540,7 +587,7 @@ namespace ProjetoCLR {
 			this->panel2->Controls->Add(this->txtNomeAluno);
 			this->panel2->Controls->Add(this->label6);
 			this->panel2->Controls->Add(this->btnMaisVelho);
-			this->panel2->Location = System::Drawing::Point(1050, 193);
+			this->panel2->Location = System::Drawing::Point(843, 181);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(266, 117);
 			this->panel2->TabIndex = 11;
@@ -551,24 +598,67 @@ namespace ProjetoCLR {
 			this->panel1->Controls->Add(this->btnMulheres);
 			this->panel1->Controls->Add(this->btnHomens);
 			this->panel1->Controls->Add(this->label7);
-			this->panel1->Location = System::Drawing::Point(1050, 321);
+			this->panel1->Location = System::Drawing::Point(843, 309);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(266, 72);
 			this->panel1->TabIndex = 10;
+			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"Nome";
+			this->Column1->Name = L"Column1";
+			this->Column1->Width = 72;
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Freguesia";
+			this->Column2->Name = L"Column2";
+			this->Column2->Width = 103;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"Ano";
+			this->Column3->Name = L"Column3";
+			this->Column3->Width = 71;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Sexo";
+			this->Column4->Name = L"Column4";
+			this->Column4->Width = 66;
+			// 
+			// btnGerarNotas
+			// 
+			this->btnGerarNotas->Location = System::Drawing::Point(9, 65);
+			this->btnGerarNotas->Name = L"btnGerarNotas";
+			this->btnGerarNotas->Size = System::Drawing::Size(108, 23);
+			this->btnGerarNotas->TabIndex = 6;
+			this->btnGerarNotas->Text = L"Gerar Notas";
+			this->btnGerarNotas->UseVisualStyleBackColor = true;
+			// 
+			// btnLimparGrid
+			// 
+			this->btnLimparGrid->Location = System::Drawing::Point(144, 65);
+			this->btnLimparGrid->Name = L"btnLimparGrid";
+			this->btnLimparGrid->Size = System::Drawing::Size(109, 23);
+			this->btnLimparGrid->TabIndex = 7;
+			this->btnLimparGrid->Text = L"Limpar Grid";
+			this->btnLimparGrid->UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1585, 628);
+			this->ClientSize = System::Drawing::Size(1322, 628);
 			this->Controls->Add(this->groupBox4);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"Form1";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Projeto Alfa - Domingos Ribeiro";
-			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPauta))->EndInit();
 			this->groupBox4->ResumeLayout(false);
+			this->panel6->ResumeLayout(false);
+			this->panel6->PerformLayout();
 			this->panel5->ResumeLayout(false);
 			this->panel5->PerformLayout();
 			this->panel4->ResumeLayout(false);
@@ -587,64 +677,7 @@ namespace ProjetoCLR {
 		//Autor: Domingos Ribeiro
 		//Data: 12-01-2021
 
-	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) 
-	{
-		dgvPauta->Rows->Add("Ana Rita Cunha", "Maximinos", 1998, "F");
-		dgvPauta->Rows->Add("Bela Costa Silva", "Lomar", 2002, "F");
-		dgvPauta->Rows->Add("Carlos Alberto Costa", "Sequeira", 1999, "M");
-		dgvPauta->Rows->Add("Carlos Daniel Ferreira", "Sequeira", 2001, "M");
-		dgvPauta->Rows->Add("Daniel Bastos Gomes", "Lovios", 1998, "M");
-		dgvPauta->Rows->Add("Daniel Silva Ferraz", "S. Vítor", 1999, "M");
-		dgvPauta->Rows->Add("Elvira Gomes Pendes", "Maximinos", 2001, "F");
-		dgvPauta->Rows->Add("Fernanda Maria Silva", "S. Vítor", 2002, "F");
-		dgvPauta->Rows->Add("Fernando Gomes Barros", "Maximinos", 1999, "M");
-		dgvPauta->Rows->Add("Gilherme Alexandre Barros", "Lamaçães", 2001, "M");
-		dgvPauta->Rows->Add("Hilda Fonseca Silva", "S. Geraldo", 1999, "F");
-		dgvPauta->Rows->Add("José Manuel Carvalho", "Gualtar", 1997, "M");
-		dgvPauta->Rows->Add("José Alberto Gomes", "Maximinos", 2001, "M");
-		dgvPauta->Rows->Add("Maria Silvéria Bastos", "Maximinos", 1997, "F");
-		dgvPauta->Rows->Add("Anabela Bastos Torres", "S. Vítor", 1996, "F");
-		dgvPauta->Rows->Add("Rui Vasco Santos", "Maximinos", 2002, "M");
-		dgvPauta->Rows->Add("Otávio Ferreira", "Maximinos", 1999, "M");
-		dgvPauta->Rows->Add("Silvério Silva Teixeira", "Lamaçães", 2001, "M");
-		dgvPauta->Rows->Add("Teodoro Armando Matos", "Maximinos", 2002, "M");
-		dgvPauta->Rows->Add("Zacarias Alexandre Sampaio", "Ferreiros", 1998, "M");
-
-		//Adicionar novas colunas
-
-		dgvPauta->ColumnCount = 14;
-		//criar a coluna 5:
-		dgvPauta->Columns[4]->Name = "d1";
-		//definir o cabeçalho para a coluna 6:
-		dgvPauta->Columns[4]->HeaderText = "POR";
-		dgvPauta->Columns[5]->Name = "d2"; dgvPauta->Columns[5]->HeaderText = "ING";
-		dgvPauta->Columns[6]->Name = "d3"; dgvPauta->Columns[6]->HeaderText = "FIL";
-		dgvPauta->Columns[7]->Name = "d4"; dgvPauta->Columns[7]->HeaderText = "MAT";
-		dgvPauta->Columns[8]->Name = "d5"; dgvPauta->Columns[8]->HeaderText = "FÍS";
-		dgvPauta->Columns[9]->Name = "d6"; dgvPauta->Columns[9]->HeaderText = "QUÍ";
-		dgvPauta->Columns[10]->Name = "d7"; dgvPauta->Columns[10]->HeaderText = "GEO";
-		dgvPauta->Columns[11]->Name = "d8"; dgvPauta->Columns[11]->HeaderText = "HIS";
-		dgvPauta->Columns[12]->Name = "d9"; dgvPauta->Columns[12]->HeaderText = "EF";
-		dgvPauta->Columns[13]->Name = "d10"; dgvPauta->Columns[13]->HeaderText = "MOR";
-
-		//Centrar coluna "Sexo"
-		dgvPauta->Columns[3]->DefaultCellStyle->Alignment = DataGridViewContentAlignment::MiddleCenter;
-
-		//Centrar "Idade"
-		dgvPauta->Columns[2]->DefaultCellStyle->Alignment = DataGridViewContentAlignment::MiddleCenter;
-
-		//Defenir a largura das colunas
-		for (int i = 4; i < 14; i++)
-		{
-			dgvPauta->Columns[i]->Width = 50;
-		}
-
-		//Idade 
-		dgvPauta->Columns[2]->Width = 50;
-		
-		//sexo
-		dgvPauta->Columns[3]->Width = 50;
-	}
+	
 	private: System::Void btnContarPorFreguesia_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 
@@ -770,7 +803,90 @@ private: System::Void btnDesabilitarGrid_Click(System::Object^ sender, System::E
 	dgvPauta->RowHeadersVisible = false;
 	dgvPauta->AllowUserToAddRows = false;
 	}
-private: System::Void groupBox4_Enter(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void groupBox4_Enter(System::Object^ sender, System::EventArgs^ e) 
+{
 }
+
+	   private: void IniciarNomesGrid()
+	   {
+		   dgvPauta->Rows->Clear();
+
+		   dgvPauta->Rows->Add("Ana Rita Cunha", "Maximinos", 1998, "F");
+		   dgvPauta->Rows->Add("Bela Costa Silva", "Lomar", 2002, "F");
+		   dgvPauta->Rows->Add("Carlos Alberto Costa", "Sequeira", 1999, "M");
+		   dgvPauta->Rows->Add("Carlos Daniel Ferreira", "Sequeira", 2001, "M");
+		   dgvPauta->Rows->Add("Daniel Bastos Gomes", "Lovios", 1998, "M");
+		   dgvPauta->Rows->Add("Daniel Silva Ferraz", "S. Vítor", 1999, "M");
+		   dgvPauta->Rows->Add("Elvira Gomes Pendes", "Maximinos", 2001, "F");
+		   dgvPauta->Rows->Add("Fernanda Maria Silva", "S. Vítor", 2002, "F");
+		   dgvPauta->Rows->Add("Fernando Gomes Barros", "Maximinos", 1999, "M");
+		   dgvPauta->Rows->Add("Gilherme Alexandre Barros", "Lamaçães", 2001, "M");
+		   dgvPauta->Rows->Add("Hilda Fonseca Silva", "S. Geraldo", 1999, "F");
+		   dgvPauta->Rows->Add("José Manuel Carvalho", "Gualtar", 1997, "M");
+		   dgvPauta->Rows->Add("José Alberto Gomes", "Maximinos", 2001, "M");
+		   dgvPauta->Rows->Add("Maria Silvéria Bastos", "Maximinos", 1997, "F");
+		   dgvPauta->Rows->Add("Anabela Bastos Torres", "S. Vítor", 1996, "F");
+		   dgvPauta->Rows->Add("Rui Vasco Santos", "Maximinos", 2002, "M");
+		   dgvPauta->Rows->Add("Otávio Ferreira", "Maximinos", 1999, "M");
+		   dgvPauta->Rows->Add("Silvério Silva Teixeira", "Lamaçães", 2001, "M");
+		   dgvPauta->Rows->Add("Teodoro Armando Matos", "Maximinos", 2002, "M");
+		   dgvPauta->Rows->Add("Zacarias Alexandre Sampaio", "Ferreiros", 1998, "M");
+
+		   //Acrescentar colunas
+
+
+		   dgvPauta->ColumnCount = 14;
+		   //criar a coluna 5:
+		   dgvPauta->Columns[4]->Name = "d1";
+		   //definir o cabeçalho para a coluna 6:
+		   dgvPauta->Columns[4]->HeaderText = "POR";
+		   dgvPauta->Columns[5]->Name = "d2"; dgvPauta->Columns[5]->HeaderText = "ING";
+		   dgvPauta->Columns[6]->Name = "d3"; dgvPauta->Columns[6]->HeaderText = "FIL";
+		   dgvPauta->Columns[7]->Name = "d4"; dgvPauta->Columns[7]->HeaderText = "MAT";
+		   dgvPauta->Columns[8]->Name = "d5"; dgvPauta->Columns[8]->HeaderText = "FÍS";
+		   dgvPauta->Columns[9]->Name = "d6"; dgvPauta->Columns[9]->HeaderText = "QUÍ";
+		   dgvPauta->Columns[10]->Name = "d7"; dgvPauta->Columns[10]->HeaderText = "GEO";
+		   dgvPauta->Columns[11]->Name = "d8"; dgvPauta->Columns[11]->HeaderText = "HIS";
+		   dgvPauta->Columns[12]->Name = "d9"; dgvPauta->Columns[12]->HeaderText = "EF";
+		   dgvPauta->Columns[13]->Name = "d10"; dgvPauta->Columns[13]->HeaderText = "MOR";
+
+	   }
+
+			private: void ConfigurarGrid()
+			{
+				//Centrar coluna "Sexo"
+				dgvPauta->Columns[3]->DefaultCellStyle->Alignment = DataGridViewContentAlignment::MiddleCenter;
+
+				//Centrar "Idade"
+				dgvPauta->Columns[2]->DefaultCellStyle->Alignment = DataGridViewContentAlignment::MiddleCenter;
+
+				//Defenir a largura das colunas
+				for (int i = 4; i < 14; i++)
+				{
+					dgvPauta->Columns[i]->Width = 45;
+				}
+
+				//Idade 
+				dgvPauta->Columns[2]->Width = 50;
+
+				//sexo
+				dgvPauta->Columns[3]->Width = 50;
+
+				//nome
+				dgvPauta->Columns[0]->Width = 150;
+
+				//freguesia
+				dgvPauta->Columns[1]->Width = 77;
+			}
+
+
+private: System::Void btnPreencherGrid_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		IniciarNomesGrid();
+	}
+private: System::Void btnConfigurarGrid_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		ConfigurarGrid();
+	}
 };
 }
