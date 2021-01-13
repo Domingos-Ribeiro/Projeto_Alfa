@@ -283,6 +283,7 @@ namespace ProjetoCLR {
 			this->btnMaisVelho->TabIndex = 6;
 			this->btnMaisVelho->Text = L"Aluno mais Velho";
 			this->btnMaisVelho->UseVisualStyleBackColor = false;
+			this->btnMaisVelho->Click += gcnew System::EventHandler(this, &Form1::btnMaisVelho_Click);
 			// 
 			// label3
 			// 
@@ -502,7 +503,7 @@ namespace ProjetoCLR {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"Form1";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Projeto Alfa";
+			this->Text = L"Projeto Alfa - Domingos Ribeiro";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPauta))->EndInit();
 			this->groupBox4->ResumeLayout(false);
@@ -518,6 +519,10 @@ namespace ProjetoCLR {
 
 		}
 #pragma endregion
+		//Programa criado no ambito do módulo C++ do curso de Programação
+		//Autor: Domingos Ribeiro
+		//Data: 12-01-2021
+
 	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) 
 	{
 		dgvPauta->Rows->Add("Ana Rita Cunha", "Maximinos", 1998, "F");
@@ -564,7 +569,7 @@ namespace ProjetoCLR {
 		}
 
 		//Depois de terminado o Ciclo, o valor da variável "total" passa para a textBox "txtTotalFregueses"
-		//Neste caso o IF só verifica se a palavra Aluno será Singular ou Plural
+		//Neste caso o ciclo IF só verifica se a palavra Aluno será apresentada no Singular ou Plural
 		if (total == 1)
 		{
 			txtTotalFregueses->Text = Convert::ToString(total) + " Aluno";
@@ -614,6 +619,26 @@ private: System::Void btnMulheres_Click(System::Object^ sender, System::EventArg
 		}
 
 	}
+	}
+private: System::Void btnMaisVelho_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		//Verificar quem é o aluno mais velho
+
+	
+	int maisVelho = Convert::ToInt16(dgvPauta->Rows[0]->Cells[2]->Value);
+	String^ nome = "";
+
+	for (size_t i = 0; i < dgvPauta->Rows->Count - 1; i++)
+	{
+		if (maisVelho > Convert::ToInt16(dgvPauta->Rows[i]->Cells[2]->Value))
+		{
+			maisVelho = Convert::ToInt16(dgvPauta->Rows[i]->Cells[2]->Value);
+			nome = Convert::ToString(dgvPauta->Rows[i]->Cells[0]->Value);
+		}
+	}
+		txtNomeAluno->Text = nome;
+		txtIdadeAluno->Text = Convert::ToString(2021 - maisVelho) + " Anos";
+	
 	}
 };
 }
