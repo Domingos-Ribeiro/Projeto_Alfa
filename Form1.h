@@ -80,6 +80,10 @@ namespace ProjetoCLR {
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Panel^ panel4;
 	private: System::Windows::Forms::Button^ btnLimparLista;
+	private: System::Windows::Forms::Panel^ panel5;
+	private: System::Windows::Forms::Button^ btnDesabilitarGrid;
+	private: System::Windows::Forms::Button^ btnAbilitarGrid;
+	private: System::Windows::Forms::Label^ label9;
 	protected:
 
 	private:
@@ -121,14 +125,19 @@ namespace ProjetoCLR {
 			this->btnHomens = (gcnew System::Windows::Forms::Button());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->btnDesabilitarGrid = (gcnew System::Windows::Forms::Button());
+			this->btnAbilitarGrid = (gcnew System::Windows::Forms::Button());
 			this->btnLimparLista = (gcnew System::Windows::Forms::Button());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPauta))->BeginInit();
 			this->groupBox4->SuspendLayout();
+			this->panel5->SuspendLayout();
 			this->panel4->SuspendLayout();
 			this->panel3->SuspendLayout();
 			this->panel2->SuspendLayout();
@@ -226,7 +235,7 @@ namespace ProjetoCLR {
 			this->lstAuxiliar->FormattingEnabled = true;
 			this->lstAuxiliar->Location = System::Drawing::Point(726, 65);
 			this->lstAuxiliar->Name = L"lstAuxiliar";
-			this->lstAuxiliar->Size = System::Drawing::Size(203, 286);
+			this->lstAuxiliar->Size = System::Drawing::Size(203, 364);
 			this->lstAuxiliar->TabIndex = 2;
 			// 
 			// txtFreguesia
@@ -371,7 +380,7 @@ namespace ProjetoCLR {
 			this->btnMulheres->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnMulheres->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->btnMulheres->Location = System::Drawing::Point(155, 35);
+			this->btnMulheres->Location = System::Drawing::Point(160, 30);
 			this->btnMulheres->Name = L"btnMulheres";
 			this->btnMulheres->Size = System::Drawing::Size(86, 30);
 			this->btnMulheres->TabIndex = 7;
@@ -385,7 +394,7 @@ namespace ProjetoCLR {
 			this->btnHomens->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnHomens->ForeColor = System::Drawing::SystemColors::ButtonFace;
-			this->btnHomens->Location = System::Drawing::Point(24, 35);
+			this->btnHomens->Location = System::Drawing::Point(24, 30);
 			this->btnHomens->Name = L"btnHomens";
 			this->btnHomens->Size = System::Drawing::Size(93, 30);
 			this->btnHomens->TabIndex = 6;
@@ -407,6 +416,7 @@ namespace ProjetoCLR {
 			// 
 			// groupBox4
 			// 
+			this->groupBox4->Controls->Add(this->panel5);
 			this->groupBox4->Controls->Add(this->btnLimparLista);
 			this->groupBox4->Controls->Add(this->panel4);
 			this->groupBox4->Controls->Add(this->panel3);
@@ -420,13 +430,52 @@ namespace ProjetoCLR {
 			this->groupBox4->TabIndex = 10;
 			this->groupBox4->TabStop = false;
 			// 
+			// panel5
+			// 
+			this->panel5->BackColor = System::Drawing::Color::LightBlue;
+			this->panel5->Controls->Add(this->btnDesabilitarGrid);
+			this->panel5->Controls->Add(this->btnAbilitarGrid);
+			this->panel5->Controls->Add(this->label9);
+			this->panel5->Location = System::Drawing::Point(449, 400);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(266, 72);
+			this->panel5->TabIndex = 15;
+			// 
+			// btnDesabilitarGrid
+			// 
+			this->btnDesabilitarGrid->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnDesabilitarGrid->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnDesabilitarGrid->ForeColor = System::Drawing::Color::White;
+			this->btnDesabilitarGrid->Location = System::Drawing::Point(144, 30);
+			this->btnDesabilitarGrid->Name = L"btnDesabilitarGrid";
+			this->btnDesabilitarGrid->Size = System::Drawing::Size(113, 30);
+			this->btnDesabilitarGrid->TabIndex = 1;
+			this->btnDesabilitarGrid->Text = L"Desativar Grid";
+			this->btnDesabilitarGrid->UseVisualStyleBackColor = false;
+			this->btnDesabilitarGrid->Click += gcnew System::EventHandler(this, &Form1::btnDesabilitarGrid_Click);
+			// 
+			// btnAbilitarGrid
+			// 
+			this->btnAbilitarGrid->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnAbilitarGrid->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnAbilitarGrid->ForeColor = System::Drawing::Color::White;
+			this->btnAbilitarGrid->Location = System::Drawing::Point(8, 30);
+			this->btnAbilitarGrid->Name = L"btnAbilitarGrid";
+			this->btnAbilitarGrid->Size = System::Drawing::Size(113, 30);
+			this->btnAbilitarGrid->TabIndex = 0;
+			this->btnAbilitarGrid->Text = L"Ativar Grid";
+			this->btnAbilitarGrid->UseVisualStyleBackColor = false;
+			this->btnAbilitarGrid->Click += gcnew System::EventHandler(this, &Form1::btnAbilitarGrid_Click);
+			// 
 			// btnLimparLista
 			// 
 			this->btnLimparLista->BackColor = System::Drawing::Color::SteelBlue;
 			this->btnLimparLista->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnLimparLista->ForeColor = System::Drawing::Color::White;
-			this->btnLimparLista->Location = System::Drawing::Point(726, 358);
+			this->btnLimparLista->Location = System::Drawing::Point(726, 442);
 			this->btnLimparLista->Name = L"btnLimparLista";
 			this->btnLimparLista->Size = System::Drawing::Size(203, 30);
 			this->btnLimparLista->TabIndex = 14;
@@ -495,6 +544,18 @@ namespace ProjetoCLR {
 			this->panel1->Size = System::Drawing::Size(266, 72);
 			this->panel1->TabIndex = 10;
 			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->ForeColor = System::Drawing::Color::DarkSlateGray;
+			this->label9->Location = System::Drawing::Point(29, 4);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(203, 17);
+			this->label9->TabIndex = 5;
+			this->label9->Text = L"Controlos da DataGridView";
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -508,6 +569,8 @@ namespace ProjetoCLR {
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPauta))->EndInit();
 			this->groupBox4->ResumeLayout(false);
+			this->panel5->ResumeLayout(false);
+			this->panel5->PerformLayout();
 			this->panel4->ResumeLayout(false);
 			this->panel4->PerformLayout();
 			this->panel3->ResumeLayout(false);
@@ -546,6 +609,10 @@ namespace ProjetoCLR {
 		dgvPauta->Rows->Add("Silvério Silva Teixeira", "Lamaçães", 2001, "M");
 		dgvPauta->Rows->Add("Teodoro Armando Matos", "Maximinos", 2002, "M");
 		dgvPauta->Rows->Add("Zacarias Alexandre Sampaio", "Ferreiros", 1998, "M");
+
+		//Adicionar novas colunas
+
+
 	}
 	private: System::Void btnContarPorFreguesia_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
@@ -623,43 +690,54 @@ private: System::Void btnMulheres_Click(System::Object^ sender, System::EventArg
 	}
 private: System::Void btnMaisVelho_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		//Verificar quem é o aluno mais velho
+		//Verificar quem é o aluno mais velho, ou seja, o ano MENOR
 
-	
-	int maisVelho = Convert::ToInt16(dgvPauta->Rows[0]->Cells[2]->Value);
+	//Vamos assumir que o ano mais pequeno é o que está na primeira linha
+	int anoMenor = Convert::ToInt16(dgvPauta->Rows[0]->Cells[2]->Value);
 	String^ nome = "";
 
-	for (size_t i = 0; i < dgvPauta->Rows->Count - 1; i++)
+	for (size_t i = 1; i < dgvPauta->Rows->Count - 1; i++)
 	{
-		if (maisVelho > Convert::ToInt16(dgvPauta->Rows[i]->Cells[2]->Value))
+		if (anoMenor > Convert::ToInt16(dgvPauta->Rows[i]->Cells[2]->Value))
 		{
-			maisVelho = Convert::ToInt16(dgvPauta->Rows[i]->Cells[2]->Value);
+			anoMenor = Convert::ToInt16(dgvPauta->Rows[i]->Cells[2]->Value);
 			nome = Convert::ToString(dgvPauta->Rows[i]->Cells[0]->Value);
 		}
 	}
 		txtNomeAluno->Text = nome;
-		txtIdadeAluno->Text = Convert::ToString(2021 - maisVelho) + " Anos";
+		txtIdadeAluno->Text = Convert::ToString(2021 - anoMenor) + " Anos";
 	
 	}
 private: System::Void btnMaisNovo_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 	int maisNovo = Convert::ToInt16(dgvPauta->Rows[0]->Cells[2]->Value);
 	String^ nome = "";
+	int contagem = 0;
 
 	for (size_t i = 0; i < dgvPauta->Rows->Count - 1; i++)
 	{
-		if (maisNovo < Convert::ToInt16(dgvPauta->Rows[i]->Cells[2]->Value))
+		if (maisNovo >= 1) 
 		{
-			maisNovo = Convert::ToInt16(dgvPauta->Rows[i]->Cells[2]->Value);
-			nome = Convert::ToString(dgvPauta->Rows[i]->Cells[0]->Value);
+			contagem = contagem + 1;
+			
 		}
 	}
+	MessageBox::Show(Convert::ToString(contagem));
 
-
-	lstAuxiliar->Items->Add(nome + Convert::ToString(2021 - maisNovo) + " Anos");
+	//lstAuxiliar->Items->Add(nome + " -" + Convert::ToString(2021 - maisNovo) + " Anos");
 
 
 	}
 	  
+private: System::Void btnAbilitarGrid_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+		dgvPauta->RowHeadersVisible = true;
+		dgvPauta->AllowUserToAddRows = true;
+	}
+private: System::Void btnDesabilitarGrid_Click(System::Object^ sender, System::EventArgs^ e) 
+	{
+	dgvPauta->RowHeadersVisible = false;
+	dgvPauta->AllowUserToAddRows = false;
+	}
 };
 }
