@@ -137,6 +137,8 @@ namespace ProjetoCLR {
 			this->btnHomens = (gcnew System::Windows::Forms::Button());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
+			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->btnNegativas = (gcnew System::Windows::Forms::Button());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->btnLimparGrid = (gcnew System::Windows::Forms::Button());
 			this->btnGerarNotas = (gcnew System::Windows::Forms::Button());
@@ -153,17 +155,15 @@ namespace ProjetoCLR {
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->panel7 = (gcnew System::Windows::Forms::Panel());
-			this->btnNegativas = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPauta))->BeginInit();
 			this->groupBox4->SuspendLayout();
+			this->panel7->SuspendLayout();
 			this->panel6->SuspendLayout();
 			this->panel5->SuspendLayout();
 			this->panel4->SuspendLayout();
 			this->panel3->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel1->SuspendLayout();
-			this->panel7->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// dgvPauta
@@ -454,6 +454,29 @@ namespace ProjetoCLR {
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Enter += gcnew System::EventHandler(this, &Form1::groupBox4_Enter);
 			// 
+			// panel7
+			// 
+			this->panel7->BackColor = System::Drawing::Color::LightBlue;
+			this->panel7->Controls->Add(this->btnNegativas);
+			this->panel7->Location = System::Drawing::Point(1057, 477);
+			this->panel7->Name = L"panel7";
+			this->panel7->Size = System::Drawing::Size(163, 95);
+			this->panel7->TabIndex = 17;
+			// 
+			// btnNegativas
+			// 
+			this->btnNegativas->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnNegativas->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnNegativas->ForeColor = System::Drawing::Color::White;
+			this->btnNegativas->Location = System::Drawing::Point(34, 12);
+			this->btnNegativas->Name = L"btnNegativas";
+			this->btnNegativas->Size = System::Drawing::Size(99, 23);
+			this->btnNegativas->TabIndex = 0;
+			this->btnNegativas->Text = L"Ver Negativas";
+			this->btnNegativas->UseVisualStyleBackColor = false;
+			this->btnNegativas->Click += gcnew System::EventHandler(this, &Form1::btnNegativas_Click);
+			// 
 			// panel6
 			// 
 			this->panel6->BackColor = System::Drawing::Color::LightBlue;
@@ -606,7 +629,7 @@ namespace ProjetoCLR {
 			this->panel4->Controls->Add(this->label8);
 			this->panel4->Location = System::Drawing::Point(15, 20);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(1111, 37);
+			this->panel4->Size = System::Drawing::Size(1205, 37);
 			this->panel4->TabIndex = 13;
 			// 
 			// label8
@@ -661,29 +684,6 @@ namespace ProjetoCLR {
 			this->panel1->Size = System::Drawing::Size(246, 72);
 			this->panel1->TabIndex = 10;
 			// 
-			// panel7
-			// 
-			this->panel7->BackColor = System::Drawing::Color::LightBlue;
-			this->panel7->Controls->Add(this->btnNegativas);
-			this->panel7->Location = System::Drawing::Point(1057, 477);
-			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(163, 95);
-			this->panel7->TabIndex = 17;
-			// 
-			// btnNegativas
-			// 
-			this->btnNegativas->BackColor = System::Drawing::Color::SteelBlue;
-			this->btnNegativas->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnNegativas->ForeColor = System::Drawing::Color::White;
-			this->btnNegativas->Location = System::Drawing::Point(34, 12);
-			this->btnNegativas->Name = L"btnNegativas";
-			this->btnNegativas->Size = System::Drawing::Size(99, 23);
-			this->btnNegativas->TabIndex = 0;
-			this->btnNegativas->Text = L"Ver Negativas";
-			this->btnNegativas->UseVisualStyleBackColor = false;
-			this->btnNegativas->Click += gcnew System::EventHandler(this, &Form1::btnNegativas_Click);
-			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -697,6 +697,7 @@ namespace ProjetoCLR {
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPauta))->EndInit();
 			this->groupBox4->ResumeLayout(false);
+			this->panel7->ResumeLayout(false);
 			this->panel6->ResumeLayout(false);
 			this->panel6->PerformLayout();
 			this->panel5->ResumeLayout(false);
@@ -709,7 +710,6 @@ namespace ProjetoCLR {
 			this->panel2->PerformLayout();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
-			this->panel7->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
