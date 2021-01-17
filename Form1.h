@@ -984,7 +984,7 @@ private: System::Void btnNegativas_Click(System::Object^ sender, System::EventAr
 	//{
 	//	if (dgvPauta->Rows[i]->Cells[j])
 	//	{
-
+	//
 	//	}
 	//}
 	}
