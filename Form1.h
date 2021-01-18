@@ -709,7 +709,7 @@ namespace ProjetoCLR {
 			this->button2->TabIndex = 19;
 			this->button2->Text = L"button2";
 			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
+			
 			// 
 			// Form1
 			// 
@@ -1017,8 +1017,6 @@ private: System::Void btnNegativas_Click(System::Object^ sender, System::EventAr
 	}
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e)
-	{
-	}
+
 };
 }
