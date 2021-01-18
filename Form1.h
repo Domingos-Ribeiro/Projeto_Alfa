@@ -96,6 +96,8 @@ namespace ProjetoCLR {
 	private: System::Windows::Forms::Button^ btnGerarNotas;
 	private: System::Windows::Forms::Panel^ panel7;
 	private: System::Windows::Forms::Button^ btnNegativas;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button2;
 	protected:
 
 	private:
@@ -111,9 +113,9 @@ namespace ProjetoCLR {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle7 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle8 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle9 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->dgvPauta = (gcnew System::Windows::Forms::DataGridView());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -155,6 +157,8 @@ namespace ProjetoCLR {
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPauta))->BeginInit();
 			this->groupBox4->SuspendLayout();
 			this->panel7->SuspendLayout();
@@ -172,42 +176,43 @@ namespace ProjetoCLR {
 			this->dgvPauta->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dgvPauta->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::SingleHorizontal;
 			this->dgvPauta->ColumnHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Single;
-			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle1->BackColor = System::Drawing::Color::SteelBlue;
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dgvPauta->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle7->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle7->BackColor = System::Drawing::Color::SteelBlue;
+			dataGridViewCellStyle7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold));
+			dataGridViewCellStyle7->ForeColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle7->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle7->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle7->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgvPauta->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this->dgvPauta->ColumnHeadersHeight = 27;
-			this->dgvPauta->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
+			this->dgvPauta->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4)
+				{
 				this->Column1, this->Column2,
 					this->Column3, this->Column4
-			});
-			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle2->BackColor = System::Drawing::Color::LightBlue;
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+				});
+			dataGridViewCellStyle8->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle8->BackColor = System::Drawing::Color::LightBlue;
+			dataGridViewCellStyle8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->dgvPauta->DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle8->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle8->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle8->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle8->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->dgvPauta->DefaultCellStyle = dataGridViewCellStyle8;
 			this->dgvPauta->EnableHeadersVisualStyles = false;
 			this->dgvPauta->GridColor = System::Drawing::Color::White;
 			this->dgvPauta->Location = System::Drawing::Point(15, 65);
 			this->dgvPauta->Name = L"dgvPauta";
 			this->dgvPauta->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Single;
-			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle3->BackColor = System::Drawing::Color::LightBlue;
-			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+			dataGridViewCellStyle9->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle9->BackColor = System::Drawing::Color::LightBlue;
+			dataGridViewCellStyle9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dgvPauta->RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle9->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle9->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle9->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle9->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dgvPauta->RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
 			this->dgvPauta->Size = System::Drawing::Size(767, 507);
 			this->dgvPauta->TabIndex = 0;
 			// 
@@ -437,6 +442,8 @@ namespace ProjetoCLR {
 			// 
 			// groupBox4
 			// 
+			this->groupBox4->Controls->Add(this->button2);
+			this->groupBox4->Controls->Add(this->button1);
 			this->groupBox4->Controls->Add(this->panel7);
 			this->groupBox4->Controls->Add(this->panel6);
 			this->groupBox4->Controls->Add(this->panel5);
@@ -684,6 +691,26 @@ namespace ProjetoCLR {
 			this->panel1->Size = System::Drawing::Size(246, 72);
 			this->panel1->TabIndex = 10;
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(420, 383);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 18;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(431, 429);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->TabIndex = 19;
+			this->button2->Text = L"button2";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -712,7 +739,7 @@ namespace ProjetoCLR {
 			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 
-		}
+			}
 #pragma endregion
 		//Programa criado no ambito do módulo C++ do curso de Programação
 		//Autor: Domingos Ribeiro
@@ -987,6 +1014,11 @@ private: System::Void btnNegativas_Click(System::Object^ sender, System::EventAr
 	//
 	//	}
 	//}
+	}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e)
+	{
 	}
 };
 }
