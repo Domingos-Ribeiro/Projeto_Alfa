@@ -96,6 +96,9 @@ namespace ProjetoCLR {
 	private: System::Windows::Forms::Button^ btnGerarNotas;
 	private: System::Windows::Forms::Panel^ panel7;
 	private: System::Windows::Forms::Button^ btnNegativas;
+	private: System::Windows::Forms::Button^ btnDelegado;
+	private: System::Windows::Forms::Button^ btnAprvovadoReprovado;
+	private: System::Windows::Forms::Button^ btnMedia;
 
 
 	protected:
@@ -140,6 +143,9 @@ namespace ProjetoCLR {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->btnDelegado = (gcnew System::Windows::Forms::Button());
+			this->btnAprvovadoReprovado = (gcnew System::Windows::Forms::Button());
+			this->btnMedia = (gcnew System::Windows::Forms::Button());
 			this->btnNegativas = (gcnew System::Windows::Forms::Button());
 			this->panel6 = (gcnew System::Windows::Forms::Panel());
 			this->btnLimparGrid = (gcnew System::Windows::Forms::Button());
@@ -211,7 +217,7 @@ namespace ProjetoCLR {
 			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
 			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
 			this->dgvPauta->RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-			this->dgvPauta->Size = System::Drawing::Size(767, 507);
+			this->dgvPauta->Size = System::Drawing::Size(821, 507);
 			this->dgvPauta->TabIndex = 0;
 			// 
 			// Column1
@@ -257,9 +263,9 @@ namespace ProjetoCLR {
 			this->lstAuxiliar->BackColor = System::Drawing::Color::LightBlue;
 			this->lstAuxiliar->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->lstAuxiliar->FormattingEnabled = true;
-			this->lstAuxiliar->Location = System::Drawing::Point(1057, 65);
+			this->lstAuxiliar->Location = System::Drawing::Point(1106, 65);
 			this->lstAuxiliar->Name = L"lstAuxiliar";
-			this->lstAuxiliar->Size = System::Drawing::Size(163, 364);
+			this->lstAuxiliar->Size = System::Drawing::Size(178, 364);
 			this->lstAuxiliar->TabIndex = 2;
 			// 
 			// txtFreguesia
@@ -452,7 +458,7 @@ namespace ProjetoCLR {
 			this->groupBox4->Controls->Add(this->dgvPauta);
 			this->groupBox4->Location = System::Drawing::Point(12, 12);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(1231, 677);
+			this->groupBox4->Size = System::Drawing::Size(1294, 677);
 			this->groupBox4->TabIndex = 10;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Enter += gcnew System::EventHandler(this, &Form1::groupBox4_Enter);
@@ -460,11 +466,54 @@ namespace ProjetoCLR {
 			// panel7
 			// 
 			this->panel7->BackColor = System::Drawing::Color::LightBlue;
+			this->panel7->Controls->Add(this->btnDelegado);
+			this->panel7->Controls->Add(this->btnAprvovadoReprovado);
+			this->panel7->Controls->Add(this->btnMedia);
 			this->panel7->Controls->Add(this->btnNegativas);
-			this->panel7->Location = System::Drawing::Point(1057, 477);
+			this->panel7->Location = System::Drawing::Point(1106, 477);
 			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(163, 95);
+			this->panel7->Size = System::Drawing::Size(178, 95);
 			this->panel7->TabIndex = 17;
+			// 
+			// btnDelegado
+			// 
+			this->btnDelegado->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnDelegado->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnDelegado->ForeColor = System::Drawing::Color::White;
+			this->btnDelegado->Location = System::Drawing::Point(93, 58);
+			this->btnDelegado->Name = L"btnDelegado";
+			this->btnDelegado->Size = System::Drawing::Size(70, 23);
+			this->btnDelegado->TabIndex = 3;
+			this->btnDelegado->Text = L"Delegado";
+			this->btnDelegado->UseVisualStyleBackColor = false;
+			// 
+			// btnAprvovadoReprovado
+			// 
+			this->btnAprvovadoReprovado->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnAprvovadoReprovado->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->btnAprvovadoReprovado->ForeColor = System::Drawing::Color::White;
+			this->btnAprvovadoReprovado->Location = System::Drawing::Point(10, 58);
+			this->btnAprvovadoReprovado->Name = L"btnAprvovadoReprovado";
+			this->btnAprvovadoReprovado->Size = System::Drawing::Size(73, 23);
+			this->btnAprvovadoReprovado->TabIndex = 2;
+			this->btnAprvovadoReprovado->Text = L"Situação";
+			this->btnAprvovadoReprovado->UseVisualStyleBackColor = false;
+			// 
+			// btnMedia
+			// 
+			this->btnMedia->BackColor = System::Drawing::Color::SteelBlue;
+			this->btnMedia->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnMedia->ForeColor = System::Drawing::Color::White;
+			this->btnMedia->Location = System::Drawing::Point(93, 15);
+			this->btnMedia->Name = L"btnMedia";
+			this->btnMedia->Size = System::Drawing::Size(73, 23);
+			this->btnMedia->TabIndex = 1;
+			this->btnMedia->Text = L"Média";
+			this->btnMedia->UseVisualStyleBackColor = false;
+			this->btnMedia->Click += gcnew System::EventHandler(this, &Form1::btnMedia_Click);
 			// 
 			// btnNegativas
 			// 
@@ -472,11 +521,11 @@ namespace ProjetoCLR {
 			this->btnNegativas->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnNegativas->ForeColor = System::Drawing::Color::White;
-			this->btnNegativas->Location = System::Drawing::Point(34, 12);
+			this->btnNegativas->Location = System::Drawing::Point(10, 15);
 			this->btnNegativas->Name = L"btnNegativas";
-			this->btnNegativas->Size = System::Drawing::Size(99, 23);
+			this->btnNegativas->Size = System::Drawing::Size(73, 23);
 			this->btnNegativas->TabIndex = 0;
-			this->btnNegativas->Text = L"Ver Negativas";
+			this->btnNegativas->Text = L"Negativas";
 			this->btnNegativas->UseVisualStyleBackColor = false;
 			this->btnNegativas->Click += gcnew System::EventHandler(this, &Form1::btnNegativas_Click);
 			// 
@@ -488,7 +537,7 @@ namespace ProjetoCLR {
 			this->panel6->Controls->Add(this->btnConfigurarGrid);
 			this->panel6->Controls->Add(this->btnPreencherGrid);
 			this->panel6->Controls->Add(this->label10);
-			this->panel6->Location = System::Drawing::Point(800, 477);
+			this->panel6->Location = System::Drawing::Point(849, 477);
 			this->panel6->Name = L"panel6";
 			this->panel6->Size = System::Drawing::Size(246, 95);
 			this->panel6->TabIndex = 16;
@@ -567,7 +616,7 @@ namespace ProjetoCLR {
 			this->panel5->Controls->Add(this->btnDesabilitarGrid);
 			this->panel5->Controls->Add(this->btnAbilitarGrid);
 			this->panel5->Controls->Add(this->label9);
-			this->panel5->Location = System::Drawing::Point(800, 393);
+			this->panel5->Location = System::Drawing::Point(849, 393);
 			this->panel5->Name = L"panel5";
 			this->panel5->Size = System::Drawing::Size(246, 72);
 			this->panel5->TabIndex = 15;
@@ -618,9 +667,9 @@ namespace ProjetoCLR {
 			this->btnLimparLista->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnLimparLista->ForeColor = System::Drawing::Color::White;
-			this->btnLimparLista->Location = System::Drawing::Point(1057, 435);
+			this->btnLimparLista->Location = System::Drawing::Point(1106, 435);
 			this->btnLimparLista->Name = L"btnLimparLista";
-			this->btnLimparLista->Size = System::Drawing::Size(163, 30);
+			this->btnLimparLista->Size = System::Drawing::Size(178, 30);
 			this->btnLimparLista->TabIndex = 14;
 			this->btnLimparLista->Text = L"LIMPAR LISTA";
 			this->btnLimparLista->UseVisualStyleBackColor = false;
@@ -632,7 +681,7 @@ namespace ProjetoCLR {
 			this->panel4->Controls->Add(this->label8);
 			this->panel4->Location = System::Drawing::Point(15, 20);
 			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(1205, 37);
+			this->panel4->Size = System::Drawing::Size(1269, 37);
 			this->panel4->TabIndex = 13;
 			// 
 			// label8
@@ -656,7 +705,7 @@ namespace ProjetoCLR {
 			this->panel3->Controls->Add(this->label1);
 			this->panel3->Controls->Add(this->label2);
 			this->panel3->Controls->Add(this->label3);
-			this->panel3->Location = System::Drawing::Point(800, 65);
+			this->panel3->Location = System::Drawing::Point(849, 65);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(246, 105);
 			this->panel3->TabIndex = 12;
@@ -671,7 +720,7 @@ namespace ProjetoCLR {
 			this->panel2->Controls->Add(this->txtNomeAluno);
 			this->panel2->Controls->Add(this->label6);
 			this->panel2->Controls->Add(this->btnMaisVelho);
-			this->panel2->Location = System::Drawing::Point(800, 181);
+			this->panel2->Location = System::Drawing::Point(849, 181);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(246, 117);
 			this->panel2->TabIndex = 11;
@@ -682,7 +731,7 @@ namespace ProjetoCLR {
 			this->panel1->Controls->Add(this->btnMulheres);
 			this->panel1->Controls->Add(this->btnHomens);
 			this->panel1->Controls->Add(this->label7);
-			this->panel1->Location = System::Drawing::Point(800, 309);
+			this->panel1->Location = System::Drawing::Point(849, 309);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(246, 72);
 			this->panel1->TabIndex = 10;
@@ -691,7 +740,7 @@ namespace ProjetoCLR {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1255, 701);
+			this->ClientSize = System::Drawing::Size(1341, 701);
 			this->Controls->Add(this->groupBox4);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"Form1";
@@ -878,7 +927,7 @@ private: System::Void groupBox4_Enter(System::Object^ sender, System::EventArgs^
 
 		   //Acrescentar colunas
 
-		   dgvPauta->ColumnCount = 15;
+		   dgvPauta->ColumnCount = 18;
 		   //criar a coluna 5:
 		   dgvPauta->Columns[4]->Name = "d1";
 		   //definir o cabeçalho para a coluna 6:
@@ -891,8 +940,11 @@ private: System::Void groupBox4_Enter(System::Object^ sender, System::EventArgs^
 		   dgvPauta->Columns[10]->Name = "d7"; dgvPauta->Columns[10]->HeaderText = "Geo";
 		   dgvPauta->Columns[11]->Name = "d8"; dgvPauta->Columns[11]->HeaderText = "His";
 		   dgvPauta->Columns[12]->Name = "d9"; dgvPauta->Columns[12]->HeaderText = "EF";
-		   dgvPauta->Columns[13]->Name = "d10"; dgvPauta->Columns[13]->HeaderText = "Mor";
+		   dgvPauta->Columns[13]->Name = "d10"; dgvPauta->Columns[13]->HeaderText = "R/M";
 		   dgvPauta->Columns[14]->Name = "d11"; dgvPauta->Columns[14]->HeaderText = "Neg";
+		   dgvPauta->Columns[15]->Name = "d12"; dgvPauta->Columns[15]->HeaderText = "Med";
+		   dgvPauta->Columns[16]->Name = "d13"; dgvPauta->Columns[16]->HeaderText = "A/R";
+		   dgvPauta->Columns[17]->Name = "d14"; dgvPauta->Columns[17]->HeaderText = "Ceo";
 
 	   }
 
@@ -905,7 +957,7 @@ private: System::Void groupBox4_Enter(System::Object^ sender, System::EventArgs^
 				dgvPauta->Columns[2]->DefaultCellStyle->Alignment = DataGridViewContentAlignment::MiddleCenter;
 
 				//Defenir a largura das colunas das disciplinas ou cadeiras
-				for (int i = 4; i < 14; i++)
+				for (int i = 4; i < 17; i++)
 				{
 					dgvPauta->Columns[i]->Width = 34;
 				}
@@ -923,8 +975,17 @@ private: System::Void groupBox4_Enter(System::Object^ sender, System::EventArgs^
 				dgvPauta->Columns[1]->Width = 77;
 
 				//Negativas
-				dgvPauta->Rows[0]->Cells[14]->Style->ForeColor = Color::Red;
+				/*dgvPauta->Rows[0]->Cells[14]->Style->ForeColor = Color::Red;*/
 				dgvPauta->Columns[14]->Width = 34;
+
+				//Media
+				dgvPauta->Columns[15]->Width = 34;
+
+				//Aprovado/Reprovado
+				dgvPauta->Columns[16]->Width = 34;
+
+				//Delegado
+				dgvPauta->Columns[17]->Width = 34;
 			}
 
 
@@ -959,7 +1020,7 @@ private: int gerarValor()
 
 	if (notas > 10 )
 	{
-		notas = valor->Next(6, 21);
+		notas = valor->Next(10, 21);
 	}
 	return notas;
 }
@@ -981,17 +1042,67 @@ private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void btnNegativas_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-	//int negativas = 0;
+	int PercorrerGrid = dgvPauta->Rows->Count - 1;
+	int negativas;
 
-	//for (size_t i = 0; i < dgvPauta->Rows->Count - 1; i++) //Percorre as linhas
-	//{
-	//	if (dgvPauta->Rows[i]->Cells[j])
-	//	{
-	//
-	//	}
-	//}
+	for (size_t i = 0; i < PercorrerGrid; i++)
+	{
+		negativas = 0; //Restabelece as negativas a zero, ou seja, não soma às da linha anterior
+		for (size_t j = 4; j < 14; j++)
+			{
+
+			if (Convert::ToInt16(dgvPauta->Rows[i]->Cells[j]->Value) < 10)
+				{
+					negativas += 1;
+				}
+
+			}
+		dgvPauta->Rows[i]->Cells[14]->Value = negativas;
+	}
 	}
 
+	   int ElementosDaGrid()
+		   {
+		   int linhas = dgvPauta->Rows->Count - 1;
+		   return linhas;
+		   }
 
+
+	   int ElementosDgvPauta()
+		   {
+			   int numero = dgvPauta->Rows->Count - 1;
+			   return numero;
+		   }
+
+
+private: System::Void btnMedia_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		//Dados da coluna 16 (Média)
+	int nota = 0;
+	int soma;
+	double media;
+
+	for (int i = 0; i <= ElementosDgvPauta(); i++)
+		{
+		soma = 0;
+		media = 0.0;
+
+		//Este ciclo percorre a partir da coluna 4 até à coluna 14 (Colunas das notas)
+		for (int j = 4; j <= 14; i++)
+			{
+				nota = Convert::ToInt16(dgvPauta->Rows[i]->Cells[j]->Value->ToString());
+				soma = soma + nota;
+			}
+			media = Convert::ToDouble(soma) / 10;
+			dgvPauta->Rows[i]->Cells[16]->Value = media;
+
+			if (media < 10)
+				{
+					dgvPauta->Rows[i]->Cells[16]->Style->ForeColor = Color::Red;
+				}
+		
+			dgvPauta->Columns[16]->DefaultCellStyle->Alignment = DataGridViewContentAlignment::MiddleCenter;
+		}
+	}
 };
 }
