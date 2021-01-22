@@ -1088,20 +1088,15 @@ private: System::Void btnMedia_Click(System::Object^ sender, System::EventArgs^ 
 		media = 0.0;
 
 		//Este ciclo percorre a partir da coluna 4 até à coluna 14 (Colunas das notas)
-		for (int j = 4; j <= 14; i++)
+		for (int j = 4; j <= 14; j++)
 			{
+
 				nota = Convert::ToInt16(dgvPauta->Rows[i]->Cells[j]->Value->ToString());
 				soma = soma + nota;
 			}
 			media = Convert::ToDouble(soma) / 10;
-			dgvPauta->Rows[i]->Cells[16]->Value = media;
+			dgvPauta->Rows[i]->Cells[14]->Value = media;
 
-			if (media < 10)
-				{
-					dgvPauta->Rows[i]->Cells[16]->Style->ForeColor = Color::Red;
-				}
-		
-			dgvPauta->Columns[16]->DefaultCellStyle->Alignment = DataGridViewContentAlignment::MiddleCenter;
 		}
 	}
 };
