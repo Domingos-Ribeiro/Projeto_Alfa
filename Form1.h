@@ -1087,7 +1087,7 @@ private: System::Void btnMedia_Click(System::Object^ sender, System::EventArgs^ 
 		soma = 0;
 		media = 0.0;
 
-		//Este ciclo percorre a partir da coluna 4 até à coluna 14 (Colunas das notas)
+		//Este ciclo percorre a partir da coluna 4 até à coluna 14 (Colunas das notas).
 		for (int j = 4; j <= 14; j++)
 			{
 
